@@ -1,6 +1,6 @@
 import play.Project._
 
-name := "computer-database"
+name := "live"
 
 version := "1.0"
 
