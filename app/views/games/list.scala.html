@@ -1,0 +1,123 @@
+@(currentPage: com.avaje.ebean.Page[Game], currentSortBy: String, currentOrder: String, currentFilter: String)
+
+@****************************************
+* Helper generating navigation links    *
+****************************************@
+@link(newPage:Int, newSortBy:String) = @{
+
+var sortBy = currentSortBy
+var order = currentOrder
+
+if(newSortBy != null) {
+sortBy = newSortBy
+if(currentSortBy == newSortBy) {
+if(currentOrder == "asc") {
+order = "desc"
+} else {
+order = "asc"
+}
+} else {
+order = "asc"
+}
+}
+
+// Generate the link
+routes.Games.list(newPage, sortBy, order, currentFilter)
+
+}
+
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(key:String, title:String) = {
+<th class="@key.replace(".","_") header @if(currentSortBy == key) @{if(currentOrder == "asc") "headerSortDown" else "headerSortUp"}">
+<a href="@link(0, key)">@title</a>
+</th>
+}
+
+@panel {
+
+<h1 id="homeTitle">@Messages("games.list.title", currentPage.getTotalRowCount)</h1>
+
+@if(flash.containsKey("success")) {
+<div class="alert-message warning">
+    <strong>Gotowe!</strong> @flash.get("success")
+</div>
+}
+
+<div id="actions">
+
+    <form action="@link(0, "name")" method="GET">
+    <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filtruj po nazwie">
+    <input type="submit" id="searchsubmit" value="Sortuj" class="btn primary">
+    </form>
+
+    <a class="btn success" id="add" href="@routes.Games.create()">Dodaj rozgrywki</a>
+
+</div>
+
+@if(currentPage.getTotalRowCount == 0) {
+
+<div class="well">
+    <em>Nie ma nic do wyświetlenia</em>
+</div>
+
+} else {
+
+<table class="computers zebra-striped">
+    <thead>
+    <tr>
+        @header("name", "Nazwa")
+        @header("season.year_start" + "/" + "season.year_end", "Sezon")
+
+    </tr>
+    </thead>
+    <tbody>
+
+    @for(game <- currentPage.getList) {
+    <tr>
+        <td><a href="@routes.Games.edit(game.id)">@game.name</a></td>
+        <td>
+            @if(game.season == null) {
+            <em>-</em>
+            } else {
+            @game.season.year_start.date.format("YYYY")/@game.season.year_end.date.format("YYYY")
+            }
+        </td>
+     </tr>
+    }
+
+    </tbody>
+</table>
+
+<div id="pagination" class="pagination">
+    <ul>
+        @if(currentPage.hasPrev) {
+        <li class="prev">
+            <a href="@link(currentPage.getPageIndex - 1, null)">&larr; Poprzedni</a>
+        </li>
+        } else {
+        <li class="prev disabled">
+            <a>&larr; Poprzedni</a>
+        </li>
+        }
+        <li class="current">
+            <a>Wyświetla @currentPage.getDisplayXtoYofZ(" do "," z ")</a>
+        </li>
+        @if(currentPage.hasNext) {
+        <li class="next">
+            <a href="@link(currentPage.getPageIndex + 1, null)">Następny &rarr;</a>
+        </li>
+        } else {
+        <li class="next disabled">
+            <a>Następny &rarr;</a>
+        </li>
+        }
+    </ul>
+</div>
+
+}
+
+}
+
+            

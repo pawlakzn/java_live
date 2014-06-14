@@ -1,0 +1,31 @@
+@(id: Long, seasonForm: Form[Season])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Edytuj Sezon</h1>
+
+@form(routes.Seasons.update(id)) {
+
+<fieldset>
+
+    @inputText(seasonForm("year_start"), '_label -> "Rok rozpoczęcia")
+    @inputText(seasonForm("year_end"), '_label -> "Rok zakończenia")
+
+</fieldset>
+
+<div class="actions">
+    <input type="submit" value="Edytuj sezon" class="btn primary"> or
+    <a href="@routes.Seasons.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+@form(routes.Seasons.delete(id), 'class -> "topRight") {
+<input type="submit" value="Usuń ten sezon" class="btn danger">
+}
+
+}

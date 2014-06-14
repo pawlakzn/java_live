@@ -1,0 +1,86 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Default path will just redirect to the list
+GET     /                           controllers.Teams.index()
+GET     /matches/index              controllers.Matches.index()
+GET     /referees/index             controllers.Referees.index()
+GET     /players/index              controllers.Players.index()
+GET     /seasons/index              controllers.Seasons.index()
+GET     /games/index                controllers.Games.index()
+GET     /users/index                controllers.Users.index()
+
+# Authentication
+GET     /login                              controllers.Application.login()
+POST    /login                              controllers.Application.authenticate()
+GET     /logout                             controllers.Application.logout()
+
+#  list (look at the default values for pagination parameters)
+GET     /matches                      controllers.Matches.list(p:Int ?= 0, s ?= "weather", o ?= "asc", f ?= "")
+GET     /teams                      controllers.Teams.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+GET     /referees                   controllers.Referees.list(p:Int ?= 0, s ?= "lastname", o ?= "asc", f ?= "")
+GET     /players                    controllers.Players.list(p:Int ?= 0, s ?= "lastname", o ?= "asc", f ?= "")
+GET     /seasons                    controllers.Seasons.list(p:Int ?= 0, s ?= "year_start", o ?= "asc", f ?= "")
+GET     /games                      controllers.Games.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+GET     /users                      controllers.Users.list(p:Int ?= 0, s ?= "login", o ?= "asc", f ?= "")
+
+# Add
+GET     /matches/new               controllers.Matches.create()
+POST    /matches                   controllers.Matches.save()
+
+GET     /teams/new                  controllers.Teams.create()
+POST    /teams                      controllers.Teams.save()
+
+GET     /referees/new               controllers.Referees.create()
+POST    /referees                   controllers.Referees.save()
+
+GET     /players/new               controllers.Players.create()
+POST    /players                   controllers.Players.save()
+
+GET     /seasons/new               controllers.Seasons.create()
+POST    /seasons                   controllers.Seasons.save()
+
+GET     /games/new               controllers.Games.create()
+POST    /games                   controllers.Games.save()
+
+GET     /users/new               controllers.Users.create()
+POST    /users                   controllers.Users.save()
+
+# Edit
+GET     /matches/:id              controllers.Matches.edit(id:Long)
+POST    /matches/:id              controllers.Matches.update(id:Long)
+
+GET     /teams/:id              controllers.Teams.edit(id:Long)
+POST    /teams/:id              controllers.Teams.update(id:Long)
+
+GET     /referees/:id              controllers.Referees.edit(id:Long)
+POST    /referees/:id              controllers.Referees.update(id:Long)
+
+GET     /players/:id              controllers.Players.edit(id:Long)
+POST    /players/:id              controllers.Players.update(id:Long)
+
+GET     /seasons/:id              controllers.Seasons.edit(id:Long)
+POST    /seasons/:id              controllers.Seasons.update(id:Long)
+
+GET     /games/:id              controllers.Games.edit(id:Long)
+POST    /games/:id              controllers.Games.update(id:Long)
+
+GET     /users/:id              controllers.Users.edit(id:Long)
+POST    /users/:id              controllers.Users.update(id:Long)
+
+# Delete
+POST    /matches/:id/delete           controllers.Matches.delete(id:Long)
+POST    /teams/:id/delete           controllers.Teams.delete(id:Long)
+POST    /referees/:id/delete       controllers.Referees.delete(id:Long)
+POST    /players/:id/delete       controllers.Players.delete(id:Long)
+POST    /seasons/:id/delete       controllers.Seasons.delete(id:Long)
+POST    /games/:id/delete           controllers.Games.delete(id:Long)
+POST    /users/:id/delete           controllers.Users.delete(id:Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+# Upload
+POST     /teams/upload/              controllers.Teams.upload(id:Long)
+POST     /players/upload/             controllers.Players.upload(id:Long)

@@ -1,0 +1,63 @@
+@(id: Long, matchForm: Form[Match])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Edytuj Mecz</h1>
+
+@if(flash.containsKey("success")) {
+<div class="alert-message warning">
+    <strong>Gotowe!</strong> @flash.get("success")
+</div>
+}
+
+@form(routes.Matches.update(id)) {
+
+<fieldset>
+
+    @select(
+    matchForm("team1.id"),
+    options(Team.options),
+    '_label -> "Zespół", '_default -> "-- Wybierz gospodarza --",
+    '_showConstraints -> false
+    )
+
+    @select(
+    matchForm("team2.id"),
+    options(Team.options),
+    '_label -> "Zespół", '_default -> "-- Wybierz gości --",
+    '_showConstraints -> false
+    )
+
+    @select(
+    matchForm("game.id"),
+    options(Game.options),
+    '_label -> "Zespół", '_default -> "-- Wybierz rozgrywki --",
+    '_showConstraints -> false
+    )
+
+    @inputText(matchForm("queue"), '_label -> "Kolejka")
+    @inputText(matchForm("match_date"), '_label -> "Data i godzina")
+
+    @inputText(matchForm("weather"), '_label -> "Pogoda")
+    @inputText(matchForm("viewers"), '_label -> "Widzowie")
+
+</fieldset>
+
+
+<div class="actions">
+    <input type="submit" value="Zapisz" class="btn primary"> or
+    <a href="@routes.Matches.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+@form(routes.Matches.delete(id), 'class -> "topRight") {
+<input type="submit" value="Usuń ten mecz" class="btn danger">
+}
+
+}
+

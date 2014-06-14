@@ -1,0 +1,52 @@
+@(matchForm: Form[Match])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Dodaj mecz</h1>
+
+@form(routes.Matches.save()) {
+
+<fieldset>
+
+    @select(
+    matchForm("team1.id"),
+    options(Team.options),
+    '_label -> "Gospodarz", '_default -> "-- Wybierz gospodarza --",
+    '_showConstraints -> false
+    )
+
+    @select(
+    matchForm("team2.id"),
+    options(Team.options),
+    '_label -> "Goście", '_default -> "-- Wybierz gości --",
+    '_showConstraints -> false
+    )
+
+    @select(
+    matchForm("game.id"),
+    options(Game.options),
+    '_label -> "Rozgrywki", '_default -> "-- Wybierz rozgrywki --",
+    '_showConstraints -> false
+    )
+
+    @inputText(matchForm("queue"), '_label -> "Kolejka")
+
+    @inputText(matchForm("match_date"), '_label -> "Data i godzina")
+
+    @inputText(matchForm("weather"), '_label -> "Pogoda")
+    @inputText(matchForm("viewers"), '_label -> "Widzowie")
+
+</fieldset>
+
+<div class="actions">
+    <input type="submit" value="Dodaj mecz" class="btn primary"> or
+    <a href="@routes.Matches.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+}

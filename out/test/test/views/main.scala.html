@@ -1,0 +1,35 @@
+@(content: Html)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Relacje LIVE</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")"> 
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")"> 
+    </head>
+    <body>
+        
+        <header class="topbar">
+            <h1 class="fill">
+                <a href="@routes.Teams.index()">
+                    System relacji LIVE meczów piłkarskich
+                    <div style="float:right;">
+                        <a href="@routes.Teams.index()">Zespoły</a>
+                        <a href="@routes.Referees.index()">Sędziowie</a>
+                        <a href="@routes.Players.index()">Piłkarze</a>
+                        <a href="@routes.Seasons.index()">Sezony</a>
+                        <a href="@routes.Games.index()">Rozgrywki</a>
+                        <a href="@routes.Users.index()">Użytkownicy</a>
+                        <a href="@routes.Application.logout()">Wyloguj</a>
+                    </div>
+                </a>
+            </h1>
+        </header>
+        
+        <section id="main">
+            @content
+        </section>
+
+
+    </body>
+</html>

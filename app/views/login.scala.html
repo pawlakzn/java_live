@@ -1,0 +1,61 @@
+@(form: Form[Application.Login])
+
+<html>
+<head>
+    <title>Zentasks</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+
+
+
+</head>
+<body>
+
+<header class="topbar">
+    <h1 class="fill">
+        <a href="@routes.Matches.index()">
+            System relacji LIVE meczów piłkarskich
+        </a>
+        <div style="float:right;">
+            <a href="@routes.Application.login()">Logowanie</a></a>
+            <a href="@routes.Users.create()">Rejestracja</a>
+        </div>
+    </h1>
+</header>
+
+@helper.form(routes.Application.authenticate) {
+
+<h1>Logowanie</h1>
+
+@if(form.hasGlobalErrors) {
+<p class="error">
+    @form.globalError.message
+</p>
+}
+
+@if(flash.contains("success")) {
+<p class="success">
+    @flash.get("success")
+</p>
+}
+
+<p>
+    <input type="login" name="login" placeholder="Login" value="@form("login").value">
+</p>
+<p>
+    <input type="password" name="password" placeholder="Hasło">
+</p>
+<p>
+    <button type="submit">Zaloguj</button>
+</p>
+
+}
+
+</body>
+</html>
+    
+
+

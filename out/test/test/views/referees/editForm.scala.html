@@ -1,0 +1,32 @@
+@(id: Long, refereeForm: Form[Referee])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Edytuj sędziego</h1>
+
+@form(routes.Referees.update(id)) {
+
+<fieldset>
+
+    @inputText(refereeForm("firstname"), '_label -> "Imię")
+    @inputText(refereeForm("lastname"), '_label -> "Nazwisko")
+    @inputText(refereeForm("city"), '_label -> "Miasto")
+
+</fieldset>
+
+<div class="actions">
+    <input type="submit" value="Edytuj sędziego" class="btn primary"> or
+    <a href="@routes.Referees.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+@form(routes.Referees.delete(id), 'class -> "topRight") {
+<input type="submit" value="Usuń sędziego" class="btn danger">
+}
+
+}

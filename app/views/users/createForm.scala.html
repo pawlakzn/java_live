@@ -1,0 +1,51 @@
+@(userForm: Form[User])
+
+@import helper._
+
+<html>
+<head>
+    <title>Zentasks</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+
+
+
+</head>
+<body>
+
+<header class="topbar">
+    <h1 class="fill">
+        <a href="@routes.Matches.index()">
+            System relacji LIVE meczów piłkarskich
+        </a>
+        <div style="float:right;">
+            <a href="@routes.Application.login()">Logowanie</a></a>
+            <a href="@routes.Users.create()">Rejestracja</a>
+        </div>
+    </h1>
+</header>
+
+@form(routes.Users.save()) {
+
+<h1>Rejestracja</h1>
+
+<p>
+    <input type="login" name="login" placeholder="Login" value="@userForm("login").value">
+</p>
+<p>
+    <input type="password" name="password" placeholder="Hasło" value="@userForm("password").value">
+</p>
+<p>
+    <input type="email" name="email" placeholder="E-mail" value="@userForm("email").value">
+</p>
+
+    <input type="submit" value="Zarejestruj" class="btn primary">
+    <a href="@routes.Users.list()" class="btn">Anuluj</a>
+
+}
+
+</body>
+</html>

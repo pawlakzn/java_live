@@ -1,0 +1,28 @@
+@(userForm: Form[User])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Rejestracja</h1>
+
+@form(routes.Users.save()) {
+
+<fieldset>
+
+    @inputText(userForm("login"), '_label -> "Login")
+    @inputText(userForm("password"), '_label -> "Hasło")
+    @inputText(userForm("email"), '_label -> "E-mail")
+
+</fieldset>
+
+<div class="actions">
+    <input type="submit" value="Zarejestruj" class="btn primary"> or
+    <a href="@routes.Users.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+}

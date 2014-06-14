@@ -1,0 +1,12 @@
+# Messages
+
+games.list.title=Znaleziono {0,choice,0#0 rozgrywek|1#1 rozgrywki|1<{0,number,integer} rozgrywek}
+matches.list.title=W systemie znajdują się {0,choice,0#0 meczów|1#1 mecz|2#2 mecze|3#3 mecze|4#4 mecze|4<{0,number,integer} meczów}.
+players.list.title=Znaleziono {0,choice,0#0 piłkarzy|1#1 piłkarza|1<{0,number,integer} piłkarzy}
+referees.list.title=Znaleziono {0,choice,0#0 sędziów|1#1 sędziego|1<{0,number,integer} sędziów}
+seasons.list.title=Znaleziono {0,choice,0#0 sezonów|1#1 sezon|2#2 sezony|3#3 sezony|3<{0,number,integer} sezonów}
+teams.list.title=Znaleziono {0,choice,0#0 zespołów|1#1 zespół|1<{0,number,integer} zespołów}
+users.list.title=Znaleziono {0,choice,0#0 użytkowników|1#1 użytkownika|1<{0,number,integer} użytkowników}
+
+
+

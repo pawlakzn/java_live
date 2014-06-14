@@ -1,0 +1,37 @@
+@(id: Long, gameForm: Form[Game])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Edytuj rozgrywki</h1>
+
+@form(routes.Games.update(id)) {
+
+<fieldset>
+
+    @inputText(gameForm("name"), '_label -> "Nazwa")
+
+    @select(
+    gameForm("season.id"),
+    options(Season.options),
+    '_label -> "Sezon", '_default -> "-- Wybierz sezon --",
+    '_showConstraints -> false
+    )
+
+</fieldset>
+
+<div class="actions">
+    <input type="submit" value="Edytuj rozgrywki" class="btn primary"> or
+    <a href="@routes.Games.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+@form(routes.Games.delete(id), 'class -> "topRight") {
+<input type="submit" value="Usuń sezon" class="btn danger">
+}
+
+}

@@ -1,0 +1,27 @@
+@(zespolForm: Form[Team])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Dodaj zespół</h1>
+
+@form(routes.Teams.save()) {
+
+<fieldset>
+
+    @inputText(zespolForm("name"), '_label -> "Nazwa zespołu")
+    @inputText(zespolForm("crest"), '_label -> "Nazwa obrazka z herbem")
+
+</fieldset>
+
+<div class="actions">
+    <input type="submit" value="Dodaj zespół" class="btn primary"> or
+    <a href="@routes.Teams.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+}

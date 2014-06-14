@@ -1,0 +1,50 @@
+@(id: Long, crest: String, zespolForm: Form[Team])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Edytuj Zespół</h1>
+
+@if(flash.containsKey("success")) {
+    <div class="alert-message warning">
+        <strong>Gotowe!</strong> @flash.get("success")
+    </div>
+}
+
+@form(routes.Teams.update(id)) {
+
+<fieldset>
+
+    @inputText(zespolForm("name"), '_label -> "Nazwa zespołu")
+    @select(
+    zespolForm("crest"),
+    options(Team.crest_options),
+    '_label -> "Herb", '_default -> "-- Wybierz herb --",
+    '_showConstraints -> false
+    )
+
+</fieldset>
+
+<img src="@routes.Assets.at(crest)" style="margin:5px;">
+
+<div class="actions">
+    <input type="submit" value="Edytuj zespół" class="btn primary"> or
+    <a href="@routes.Teams.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+@form(routes.Teams.delete(id), 'class -> "topRight") {
+    <input type="submit" value="Usuń ten zespół" class="btn danger">
+}
+
+@form(action = routes.Teams.upload(id), 'enctype -> "multipart/form-data") {
+    <input type="file" name="picture">
+    <input type="submit">
+}
+
+}
+

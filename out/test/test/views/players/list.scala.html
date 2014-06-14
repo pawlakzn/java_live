@@ -1,0 +1,146 @@
+@(currentPage: com.avaje.ebean.Page[Player], currentSortBy: String, currentOrder: String, currentFilter: String)
+
+@****************************************
+* Helper generating navigation links    *
+****************************************@
+@link(newPage:Int, newSortBy:String) = @{
+
+var sortBy = currentSortBy
+var order = currentOrder
+
+if(newSortBy != null) {
+sortBy = newSortBy
+if(currentSortBy == newSortBy) {
+if(currentOrder == "asc") {
+order = "desc"
+} else {
+order = "asc"
+}
+} else {
+order = "asc"
+}
+}
+
+// Generate the link
+routes.Players.list(newPage, sortBy, order, currentFilter)
+
+}
+
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(key:String, title:String) = {
+<th class="@key.replace(".","_") header @if(currentSortBy == key) @{if(currentOrder == "asc") "headerSortDown" else "headerSortUp"}">
+<a href="@link(0, key)">@title</a>
+</th>
+}
+
+@main {
+
+<h1 id="homeTitle">@Messages("players.list.title", currentPage.getTotalRowCount)</h1>
+
+@if(flash.containsKey("success")) {
+<div class="alert-message warning">
+    <strong>Gotowe!</strong> @flash.get("success")
+</div>
+}
+
+<div id="actions">
+
+    <form action="@link(0, "lastname")" method="GET">
+    <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filtruj po nazwisku">
+    <input type="submit" id="searchsubmit" value="Sortuj" class="btn primary">
+    </form>
+
+    <a class="btn success" id="add" href="@routes.Players.create()">Dodaj piłkarza</a>
+
+</div>
+
+@if(currentPage.getTotalRowCount == 0) {
+
+<div class="well">
+    <em>Nie ma nic do wyświetlenia</em>
+</div>
+
+} else {
+
+<table class="computers zebra-striped">
+    <thead>
+    <tr>
+        @header("lastname", "Nazwisko")
+        @header("firstname", "Imię")
+        @header("team.name", "Zespół")
+        @header("position", "Pozycja")
+        @header("number", "Numer")
+    </tr>
+    </thead>
+    <tbody>
+
+    @for(player <- currentPage.getList) {
+    <tr>
+        <td><a href="@routes.Players.edit(player.id)">@player.lastname</a></td>
+        <td>
+            @if(player.firstname == null) {
+            <em>-</em>
+            } else {
+            @player.firstname
+            }
+        </td>
+        <td>
+            @if(player.team == null) {
+            <em>-</em>
+            } else {
+            @player.team.name
+            }
+        </td>
+        <td>
+            @if(player.position == null) {
+            <em>-</em>
+            } else {
+            @player.position
+            }
+        </td>
+        <td>
+            @if(player.number == null) {
+            <em>-</em>
+            } else {
+            @player.number
+            }
+        </td>
+    </tr>
+    }
+
+    </tbody>
+</table>
+
+<div id="pagination" class="pagination">
+    <ul>
+        @if(currentPage.hasPrev) {
+        <li class="prev">
+            <a href="@link(currentPage.getPageIndex - 1, null)">&larr; Poprzedni</a>
+        </li>
+        } else {
+        <li class="prev disabled">
+            <a>&larr; Poprzedni</a>
+        </li>
+        }
+        <li class="current">
+            <a>Wyświetla @currentPage.getDisplayXtoYofZ(" do "," z ")</a>
+        </li>
+        @if(currentPage.hasNext) {
+        <li class="next">
+            <a href="@link(currentPage.getPageIndex + 1, null)">Następny &rarr;</a>
+        </li>
+        } else {
+        <li class="next disabled">
+            <a>Następny &rarr;</a>
+        </li>
+        }
+    </ul>
+</div>
+
+}
+
+}
+
+            
