@@ -6,6 +6,7 @@ import static play.data.Form.*;
 
 import models.*;
 
+@Security.Authenticated(Secured.class)
 public class Games extends Controller {
 
     public static Result GO_HOME = redirect(

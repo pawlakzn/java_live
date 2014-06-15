@@ -15,6 +15,7 @@ import models.*;
 
 import java.io.File;
 
+@Security.Authenticated(Secured.class)
 public class Players extends Controller {
 
     public static Result GO_HOME = redirect(

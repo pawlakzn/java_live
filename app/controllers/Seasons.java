@@ -13,6 +13,7 @@ import models.*;
 
 import java.text.SimpleDateFormat;
 
+@Security.Authenticated(Secured.class)
 public class Seasons extends Controller {
 
     public static Result GO_HOME = redirect(

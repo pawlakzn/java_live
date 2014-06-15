@@ -32,6 +32,12 @@
 
 <h1>Rejestracja</h1>
 
+@if(flash.containsKey("wrong")) {
+<div class="alert-message warning">
+    @flash.get("wrong")
+</div>
+}
+
 <p>
     <input type="login" name="login" placeholder="Login" value="@userForm("login").value">
 </p>

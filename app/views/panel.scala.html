@@ -22,7 +22,9 @@
                 <a href="@routes.Matches.index()">Mecze</a>
                 <a href="@routes.Games.index()">Rozgrywki</a>
                 <a href="@routes.Matches.index()">Mecze</a>
+                @if(session.get("login")){
                 <a href="@routes.Application.logout()">Wyloguj</a>
+                }
             </div>
     </h1>
 </header>

@@ -60,20 +60,26 @@ Seq[Any](format.raw/*1.24*/("""
 
 <h1>Rejestracja</h1>
 
+"""),_display_(Seq[Any](/*35.2*/if(flash.containsKey("wrong"))/*35.32*/ {_display_(Seq[Any](format.raw/*35.34*/("""
+<div class="alert-message warning">
+    """),_display_(Seq[Any](/*37.6*/flash/*37.11*/.get("wrong"))),format.raw/*37.24*/("""
+</div>
+""")))})),format.raw/*39.2*/("""
+
 <p>
-    <input type="login" name="login" placeholder="Login" value=""""),_display_(Seq[Any](/*36.66*/userForm("login")/*36.83*/.value)),format.raw/*36.89*/("""">
+    <input type="login" name="login" placeholder="Login" value=""""),_display_(Seq[Any](/*42.66*/userForm("login")/*42.83*/.value)),format.raw/*42.89*/("""">
 </p>
 <p>
-    <input type="password" name="password" placeholder="Hasło" value=""""),_display_(Seq[Any](/*39.72*/userForm("password")/*39.92*/.value)),format.raw/*39.98*/("""">
+    <input type="password" name="password" placeholder="Hasło" value=""""),_display_(Seq[Any](/*45.72*/userForm("password")/*45.92*/.value)),format.raw/*45.98*/("""">
 </p>
 <p>
-    <input type="email" name="email" placeholder="E-mail" value=""""),_display_(Seq[Any](/*42.67*/userForm("email")/*42.84*/.value)),format.raw/*42.90*/("""">
+    <input type="email" name="email" placeholder="E-mail" value=""""),_display_(Seq[Any](/*48.67*/userForm("email")/*48.84*/.value)),format.raw/*48.90*/("""">
 </p>
 
     <input type="submit" value="Zarejestruj" class="btn primary">
-    <a href=""""),_display_(Seq[Any](/*46.15*/routes/*46.21*/.Users.list())),format.raw/*46.34*/("""" class="btn">Anuluj</a>
+    <a href=""""),_display_(Seq[Any](/*52.15*/routes/*52.21*/.Users.list())),format.raw/*52.34*/("""" class="btn">Anuluj</a>
 
-""")))})),format.raw/*48.2*/("""
+""")))})),format.raw/*54.2*/("""
 
 </body>
 </html>
@@ -89,11 +95,11 @@ Seq[Any](format.raw/*1.24*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sat Jun 14 21:17:46 CEST 2014
-                    SOURCE: D:/Pawlak/Play/test/app/views/users/createForm.scala.html
-                    HASH: f3122a2a2adb40719746e4676021cea9dfc0713d
-                    MATRIX: 789->1|922->23|952->45|1088->146|1102->152|1155->184|1262->255|1277->261|1334->295|1439->364|1454->370|1520->413|1625->482|1640->488|1698->523|1829->618|1844->624|1882->640|2046->768|2061->774|2103->794|2182->837|2197->843|2234->858|2329->918|2363->943|2403->945|2537->1043|2563->1060|2591->1066|2713->1152|2742->1172|2770->1178|2887->1259|2913->1276|2941->1282|3070->1375|3085->1381|3120->1394|3180->1423
-                    LINES: 26->1|30->1|32->4|36->8|36->8|36->8|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|49->21|49->21|49->21|53->25|53->25|53->25|54->26|54->26|54->26|59->31|59->31|59->31|64->36|64->36|64->36|67->39|67->39|67->39|70->42|70->42|70->42|74->46|74->46|74->46|76->48
+                    DATE: Sun Jun 15 11:11:24 CEST 2014
+                    SOURCE: D:/Pawlak/Play/live/app/views/users/createForm.scala.html
+                    HASH: c99f70339aa849ae16b4303da5416d769759ab5f
+                    MATRIX: 789->1|922->23|952->45|1088->146|1102->152|1155->184|1262->255|1277->261|1334->295|1439->364|1454->370|1520->413|1625->482|1640->488|1698->523|1829->618|1844->624|1882->640|2046->768|2061->774|2103->794|2182->837|2197->843|2234->858|2329->918|2363->943|2403->945|2467->974|2506->1004|2546->1006|2625->1050|2639->1055|2674->1068|2716->1079|2826->1153|2852->1170|2880->1176|3002->1262|3031->1282|3059->1288|3176->1369|3202->1386|3230->1392|3359->1485|3374->1491|3409->1504|3469->1533
+                    LINES: 26->1|30->1|32->4|36->8|36->8|36->8|38->10|38->10|38->10|39->11|39->11|39->11|40->12|40->12|40->12|49->21|49->21|49->21|53->25|53->25|53->25|54->26|54->26|54->26|59->31|59->31|59->31|63->35|63->35|63->35|65->37|65->37|65->37|67->39|70->42|70->42|70->42|73->45|73->45|73->45|76->48|76->48|76->48|80->52|80->52|80->52|82->54
                     -- GENERATED --
                 */
             

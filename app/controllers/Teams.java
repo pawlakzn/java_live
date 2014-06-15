@@ -9,6 +9,7 @@ import java.io.File;
 
 import models.*;
 
+@Security.Authenticated(Secured.class)
 public class Teams extends Controller {
 
     public static Result GO_HOME = redirect(

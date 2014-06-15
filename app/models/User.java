@@ -37,6 +37,12 @@ public class User extends Model {
     public Long status;
     // -- Queries
 
+    public User() {
+        Integer i = 0;
+        long l = i.longValue();
+        this.status = l;
+    }
+
     public static Model.Finder<String,User> find = new Model.Finder<String,User>(String.class, User.class);
     public static Model.Finder<Long,User> findLong = new Model.Finder<Long,User>(Long.class, User.class);
 

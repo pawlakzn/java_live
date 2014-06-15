@@ -52,7 +52,7 @@ insert into player (id, team_id, lastname, firstname, date_birth, status, photo,
 insert into player (id, team_id, lastname, firstname, date_birth, status, photo, height, weight, position, number) values (12, 1, 'Paixao', 'Marco', '1984-09-19', 1, 'players/paixao.jpg', 185, 79, 'napastnik', 19);
 insert into player (id, team_id, lastname, firstname, date_birth, status, photo, height, weight, position, number) values (13, 2, 'Kosecki', 'Jakub', '1990-08-29', 1, 'players/kosecki.jpg', 168, 59, 'pomocnik', null);
 
-insert into user (id, login, email, password, name, lastname, status) values (1, 'test', 'test@test.com', 'test', 'Paweł', 'Lorenc', 1);
+insert into user (id, login, email, password, name, lastname, status) values (1, 'test', 'test@test.com', 'test', 'Paweł', 'Lorenc', 2);
 insert into user (id, login, email, password, name, lastname, status) values (2, 'lorenc', 'pawlakzn@gmail.com', 'test', 'Tomasz', 'Walkowiak', 1);
 insert into user (id, login, email, password, name, lastname, status) values (3, 'kuc', 'p.lorenc@wp.pl', 'test', 'Mateusz', 'Kuc', 0);
 

@@ -35,7 +35,7 @@ routes.Games.list(newPage, sortBy, order, currentFilter)
 </th>
 }
 
-@panel {
+@main {
 
 <h1 id="homeTitle">@Messages("games.list.title", currentPage.getTotalRowCount)</h1>
 
@@ -68,7 +68,7 @@ routes.Games.list(newPage, sortBy, order, currentFilter)
     <thead>
     <tr>
         @header("name", "Nazwa")
-        @header("season.year_start" + "/" + "season.year_end", "Sezon")
+        <th>Sezon</th>
 
     </tr>
     </thead>

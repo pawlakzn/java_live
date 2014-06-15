@@ -3,13 +3,14 @@
 # ~~~~
 
 # Default path will just redirect to the list
-GET     /                           controllers.Teams.index()
+GET     /                           controllers.Matches.index()
 GET     /matches/index              controllers.Matches.index()
 GET     /referees/index             controllers.Referees.index()
 GET     /players/index              controllers.Players.index()
 GET     /seasons/index              controllers.Seasons.index()
 GET     /games/index                controllers.Games.index()
 GET     /users/index                controllers.Users.index()
+GET     /teams/index                controllers.Teams.index()
 
 # Authentication
 GET     /login                              controllers.Application.login()
@@ -84,3 +85,5 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 # Upload
 POST     /teams/upload/              controllers.Teams.upload(id:Long)
 POST     /players/upload/             controllers.Players.upload(id:Long)
+
+GET    /users/active/:id              controllers.Users.active(id:Long)

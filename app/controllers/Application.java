@@ -1,8 +1,12 @@
 package controllers;
 
+
 import play.*;
 import play.mvc.*;
 import play.data.*;
+
+import play.api.mvc.Session;
+
 import static play.data.Form.*;
 
 import models.*;
@@ -19,7 +23,7 @@ public class Application extends Controller {
 
         public String validate() {
             if(User.authenticate(login, password) == null) {
-                return "Invalid user or password";
+                return "Nieprawidłowy login lub hasło!";
             }
             return null;
         }
@@ -30,9 +34,16 @@ public class Application extends Controller {
      * Login page.
      */
     public static Result login() {
-        return ok(
-                login.render(form(Login.class))
-        );
+       String user = session("login");
+       if(user != null) {
+            return redirect(
+                    routes.Matches.index()
+            );
+        } else {
+            return ok(
+                    login.render(form(Login.class))
+            );
+        }
     }
 
     /**
@@ -44,8 +55,9 @@ public class Application extends Controller {
             return badRequest(login.render(loginForm));
         } else {
             session("login", loginForm.get().login);
+            flash("success", "Zalogowałeś się!");
             return redirect(
-                    routes.Teams.index()
+                    routes.Matches.index()
             );
         }
     }
@@ -55,7 +67,7 @@ public class Application extends Controller {
      */
     public static Result logout() {
         session().clear();
-        flash("success", "You've been logged out");
+        flash("success", "Wylogowałeś się!");
         return redirect(
                 routes.Matches.index()
         );

@@ -1,4 +1,4 @@
-@(currentPage: com.avaje.ebean.Page[User], currentSortBy: String, currentOrder: String, currentFilter: String)
+@(currentPage: com.avaje.ebean.Page[User], currentSortBy: String, currentOrder: String, currentFilter: String, loggeduser: User)
 
 @****************************************
 * Helper generating navigation links    *
@@ -35,7 +35,7 @@ routes.Users.list(newPage, sortBy, order, currentFilter)
 </th>
 }
 
-@panel {
+@main {
 
 <h1 id="homeTitle">@Messages("users.list.title", currentPage.getTotalRowCount)</h1>
 
@@ -48,11 +48,11 @@ routes.Users.list(newPage, sortBy, order, currentFilter)
 <div id="actions">
 
     <form action="@link(0, "login")" method="GET">
-    <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filtruj po rozpoczęciu">
+    <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filtruj po loginie">
     <input type="submit" id="searchsubmit" value="Sortuj" class="btn primary">
     </form>
 
-    <a class="btn success" id="add" href="@routes.Users.create()">Rejestracja</a>
+    <a class="btn success" id="add" href="@routes.Users.create()">Dodaj konto</a>
 
 </div>
 
@@ -71,6 +71,7 @@ routes.Users.list(newPage, sortBy, order, currentFilter)
         @header("email", "email")
         @header("name", "Imię")
         @header("lastname", "Nazwisko")
+        @header("status", "Status")
     </tr>
     </thead>
     <tbody>
@@ -97,6 +98,13 @@ routes.Users.list(newPage, sortBy, order, currentFilter)
             <em>-</em>
             } else {
             @user.lastname
+            }
+        </td>
+        <td>
+            @if(user.status == 0) {
+            nieaktywny @if(loggeduser.status == 2){<a class="btn info small" id="add" href="@routes.Users.active(user.id)">Aktywuj</a>}
+            } else {
+           aktywny
             }
         </td>
     </tr>

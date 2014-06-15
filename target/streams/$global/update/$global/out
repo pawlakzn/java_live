@@ -1,20 +1,20 @@
-[0m[[0minfo[0m] [0mUpdating {file:/D:/Pawlak/Play/test/}test...[0m
-[0m[[0mdebug[0m] [0m:: resolving dependencies :: computer-database#computer-database_2.10;1.0[0m
+[0m[[0minfo[0m] [0mUpdating {file:/D:/Pawlak/Play/live/}live...[0m
+[0m[[0mdebug[0m] [0m:: resolving dependencies :: default#live_2.10;1.0[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
 [0m[[0mdebug[0m] [0m	refresh = false[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4163f3bd[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@12fdd177[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java-jdbc_2.10;2.2.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-java-jdbc_2.10;2.2.3 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java-jdbc_2.10;2.2.3[0m
@@ -707,7 +707,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-java-ebean_2.10;2.2.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-java-ebean_2.10;2.2.3 {compile=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-java-ebean_2.10;2.2.3[0m
@@ -743,16 +743,16 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->com.typesafe.play#play-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.3->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.3->com.typesafe.play#sbt-link;2.2.3 [compile->default(compile)][0m
@@ -1149,7 +1149,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
@@ -1165,17 +1165,17 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->com.typesafe.play#play-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.3->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.3->com.typesafe.play#sbt-link;2.2.3 [compile->default(compile)][0m
@@ -1572,7 +1572,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
@@ -1588,9 +1588,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-test_2.10;2.2.3 [test->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-test_2.10;2.2.3 [test->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-test_2.10;2.2.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-test_2.10;2.2.3 {test=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-test_2.10;2.2.3[0m
@@ -2527,17 +2527,17 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.fluentlenium#fluentlenium-festassert;0.8.0->org.easytesting#fest-assert;1.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.10;2.2.3->org.fluentlenium#fluentlenium-festassert;0.8.0 [compile->master][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'provided'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'optional'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'compile-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [compile-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [compile-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->com.typesafe.play#play-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.3->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.3->com.typesafe.play#sbt-link;2.2.3 [compile->default(compile)][0m
@@ -2934,7 +2934,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
@@ -2950,19 +2950,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [runtime-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [runtime-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->com.typesafe.play#play-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.3->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.3->com.typesafe.play#sbt-link;2.2.3 [compile->default(compile)][0m
@@ -3359,7 +3359,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
@@ -3375,19 +3375,19 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [optional][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test-internal'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [test-internal][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [test][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [test-internal][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [test][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [compile->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->com.typesafe.play#play-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-jdbc_2.10;2.2.3->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play_2.10;2.2.3->com.typesafe.play#sbt-link;2.2.3 [compile->default(compile)][0m
@@ -3784,7 +3784,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-jdbc_2.10;2.2.3->org.scala-lang#scala-library;2.10.3 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java-ebean_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->com.typesafe.play#play-java-jdbc_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.avaje.ebeanorm#avaje-ebeanorm;3.2.2 [compile->runtime][0m
@@ -3800,9 +3800,9 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->runtime][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-java-ebean_2.10;2.2.3->org.hibernate.javax.persistence#hibernate-jpa-2.0-api;1.0.1.Final [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-test_2.10;2.2.3 [test->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-java_2.10;2.2.3 [compile->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-test_2.10;2.2.3 [test->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.10;2.2.3->com.typesafe.play#play_2.10;2.2.3 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.10;2.2.3->junit#junit;4.11 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.10;2.2.3->junit#junit;4.11 [compile->runtime][0m
@@ -4489,15 +4489,15 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.easytesting#fest-assert;1.4->org.easytesting#fest-util;1.1.6 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.easytesting#fest-assert;1.4->org.easytesting#fest-util;1.1.6 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-test_2.10;2.2.3->org.fluentlenium#fluentlenium-festassert;0.8.0 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [optional][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [provided][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [optional][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [provided][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'plugin'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [plugin][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [plugin][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'sources'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [sources][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [sources][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'docs'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [docs][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->com.typesafe.play#play-docs_2.10;2.2.3 [docs->default(compile)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [docs][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->com.typesafe.play#play-docs_2.10;2.2.3 [docs->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.typesafe.play#play-docs_2.10;2.2.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.typesafe.play#play-docs_2.10;2.2.3 {docs=[default(compile)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.typesafe.play#play-docs_2.10;2.2.3[0m
@@ -4947,17 +4947,17 @@
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.10.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0mdependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.0 {compile=[compile(*), master(*)], runtime=[runtime(*)]} => dependency: org.scala-lang#scala-library;2.10.3 {compile=[compile(*), master(*)], runtime=[runtime(*)]}[0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'pom'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [pom][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [pom][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'scala-tool'[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies for computer-database#computer-database_2.10;1.0 [scala-tool][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies for default#live_2.10;1.0 [scala-tool][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->default][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.3 {scala-tool=[default, optional(default)]}[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-compiler;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-compiler;2.10.3 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->master(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->compile(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-library;2.10.3 [compile->default][0m
@@ -4975,8 +4975,8 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#scala-reflect;2.10.3 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-reflect;2.10.3->org.scala-lang#scala-library;2.10.3 [runtime->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-compiler;2.10.3 [scala-tool->optional(default)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#scala-compiler;2.10.3->org.scala-lang#jline;2.10.3 [optional->master(*)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.3 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.3 {optional=[compile(*), master(*)]}[0m
@@ -4991,12 +4991,12 @@
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.fusesource.jansi#jansi;1.4[0m
 [0m[[0mdebug[0m] [0m	found org.fusesource.jansi#jansi;1.4 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scala-lang#jline;2.10.3->org.fusesource.jansi#jansi;1.4 [compile->compile(*)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->default][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies computer-database#computer-database_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->optional(default)][0m
-[0m[[0mdebug[0m] [0m	resolved ivy file produced in D:\Pawlak\Play\test\target\resolution-cache\computer-database\computer-database_2.10\1.0\resolved.xml.xml[0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->default][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->runtime][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->compile][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->master][0m
+[0m[[0mdebug[0m] [0m== resolving dependencies default#live_2.10;1.0->org.scala-lang#scala-library;2.10.3 [scala-tool->optional(default)][0m
+[0m[[0mdebug[0m] [0m	resolved ivy file produced in D:\Pawlak\Play\live\target\resolution-cache\default\live_2.10\1.0\resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-library;2.10.3!scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.10;2.2.3!play-java-jdbc_2.10.jar[0m
@@ -5121,19 +5121,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 6375ms :: artifacts dl 292ms[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 compile produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 runtime produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 test produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 provided produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 optional produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 compile-internal produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 runtime-internal produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 test-internal produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 plugin produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 sources produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 docs produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 pom produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for computer-database#computer-database_2.10;1.0 scala-tool produced in D:\Pawlak\Play\test\target\resolution-cache\reports\computer-database-computer-database_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (6375ms resolve - 292ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 3879ms :: artifacts dl 190ms[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 compile produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 runtime produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 test produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 provided produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 optional produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 compile-internal produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 runtime-internal produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 test-internal produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 plugin produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 sources produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 docs produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 pom produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#live_2.10;1.0 scala-tool produced in D:\Pawlak\Play\live\target\resolution-cache\reports\default-live_2.10-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (3879ms resolve - 190ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
