@@ -68,7 +68,9 @@ insert into match(id, game_id, queue, statistics_id, referee_id, team1_id, team2
 
 insert into gallery(id, match_id, path) values (1, 1, 'galleries/1/');
 
-insert into video(id, match_id, path) values (1, 1, '<iframe width="640" height="360" src="//www.youtube.com/embed/_UUQVXGr85c" frameborder="0" allowfullscreen></iframe>');
+insert into video(id, vmatch_id, name, path) values (1, 2, 'Oprawa', '//www.youtube.com/embed/_UUQVXGr85c');
+insert into video(id, vmatch_id, name, path) values (2, 2, 'Oprawa', '//www.youtube.com/embed/hGzTytCwJ1k');
+insert into video(id, vmatch_id, name, path) values (3, 1, 'Oprawa', '//www.youtube.com/embed/s_3dRddW8_Q');
 
 # --- !Downs
 delete from gallery;

@@ -130,7 +130,8 @@ create table user (
 
 create table video (
 	id                        bigint not null,
-	match_id                  bigint,
+	vmatch_id                  bigint,
+	name                      varchar(255),
 	path                      varchar(255),
 	constraint pk_video primary key (id))
 ;
@@ -170,8 +171,8 @@ create index ix_match_team2_7 on match (team2_id);
 alter table player add constraint fk_player_team_8 foreign key (team_id) references team (id) on delete restrict on update restrict;
 create index ix_player_team_8 on player (team_id);
 
-alter table video add constraint fk_video_match_9 foreign key (match_id) references match (id) on delete restrict on update restrict;
-create index ix_video_match_9 on video (match_id);
+alter table video add constraint fk_video_vmatch_9 foreign key (vmatch_id) references vmatch (id) on delete restrict on update restrict;
+create index ix_video_vmatch_9 on video (vmatch_id);
 
 # --- !Downs
 

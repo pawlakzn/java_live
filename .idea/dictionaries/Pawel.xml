@@ -13,6 +13,7 @@
       <w>lastname</w>
       <w>lista</w>
       <w>loggeduser</w>
+      <w>mecz</w>
       <w>meczów</w>
       <w>miasto</w>
       <w>następny</w>
@@ -39,6 +40,7 @@
       <w>usunięty</w>
       <w>usuń</w>
       <w>użytkownik</w>
+      <w>wideo</w>
       <w>wyświetla</w>
       <w>wyświetlenia</w>
       <w>zakończenia</w>
@@ -52,6 +54,7 @@
       <w>zespół</w>
       <w>zobacz</w>
       <w>został</w>
+      <w>ścieżka</w>
     </words>
   </dictionary>
 </component>

@@ -1,6 +1,6 @@
 // @SOURCE:D:/Pawlak/Play/live/conf/routes
-// @HASH:68e666b07a39f945bbad014a8ebb6ed93e91a1c0
-// @DATE:Sun Jun 15 15:03:13 CEST 2014
+// @HASH:b1cbac74d6cddbd58916b920fb953019a131e26c
+// @DATE:Sun Jun 15 23:09:43 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,56 +13,63 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:90
+// @LINE:99
+// @LINE:98
+// @LINE:96
+// @LINE:95
+// @LINE:92
 // @LINE:89
+// @LINE:88
 // @LINE:87
 // @LINE:86
+// @LINE:85
+// @LINE:84
 // @LINE:83
-// @LINE:80
+// @LINE:82
 // @LINE:79
 // @LINE:78
-// @LINE:77
 // @LINE:76
 // @LINE:75
-// @LINE:74
-// @LINE:71
+// @LINE:73
+// @LINE:72
 // @LINE:70
-// @LINE:68
+// @LINE:69
 // @LINE:67
-// @LINE:65
+// @LINE:66
 // @LINE:64
-// @LINE:62
+// @LINE:63
 // @LINE:61
-// @LINE:59
+// @LINE:60
 // @LINE:58
-// @LINE:56
-// @LINE:55
+// @LINE:57
+// @LINE:54
 // @LINE:53
-// @LINE:52
-// @LINE:49
+// @LINE:51
+// @LINE:50
 // @LINE:48
-// @LINE:46
+// @LINE:47
 // @LINE:45
-// @LINE:43
+// @LINE:44
 // @LINE:42
-// @LINE:40
+// @LINE:41
 // @LINE:39
-// @LINE:37
+// @LINE:38
 // @LINE:36
-// @LINE:34
+// @LINE:35
 // @LINE:33
-// @LINE:31
-// @LINE:30
+// @LINE:32
+// @LINE:29
+// @LINE:28
 // @LINE:27
 // @LINE:26
 // @LINE:25
 // @LINE:24
 // @LINE:23
 // @LINE:22
-// @LINE:21
+// @LINE:19
 // @LINE:18
 // @LINE:17
-// @LINE:16
+// @LINE:14
 // @LINE:13
 // @LINE:12
 // @LINE:11
@@ -72,11 +79,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:83
+// @LINE:92
 class ReverseAssets {
     
 
-// @LINE:83
+// @LINE:92
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -86,47 +93,102 @@ def at(file:String): Call = {
                           
 
 // @LINE:89
-// @LINE:80
-// @LINE:71
-// @LINE:70
-// @LINE:49
-// @LINE:48
-// @LINE:27
+// @LINE:79
+// @LINE:78
+// @LINE:54
+// @LINE:53
+// @LINE:29
+// @LINE:14
+class ReverseVideos {
+    
+
+// @LINE:89
+def delete(id:Long): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "videos/" + implicitly[PathBindable[Long]].unbind("id", id) + "/delete")
+}
+                                                
+
+// @LINE:53
+def create(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "videos/new")
+}
+                                                
+
+// @LINE:78
+def edit(id:Long): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "videos/" + implicitly[PathBindable[Long]].unbind("id", id))
+}
+                                                
+
+// @LINE:79
+def update(id:Long): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "videos/" + implicitly[PathBindable[Long]].unbind("id", id))
+}
+                                                
+
+// @LINE:29
+def list(p:Int = 0, s:String = "name", o:String = "asc", f:String = ""): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "videos" + queryString(List(if(p == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("p", p)), if(s == "name") None else Some(implicitly[QueryStringBindable[String]].unbind("s", s)), if(o == "asc") None else Some(implicitly[QueryStringBindable[String]].unbind("o", o)), if(f == "") None else Some(implicitly[QueryStringBindable[String]].unbind("f", f)))))
+}
+                                                
+
+// @LINE:54
+def save(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "videos")
+}
+                                                
+
+// @LINE:14
+def index(): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "videos/index")
+}
+                                                
+    
+}
+                          
+
+// @LINE:98
+// @LINE:88
+// @LINE:76
+// @LINE:75
+// @LINE:51
+// @LINE:50
+// @LINE:28
 // @LINE:12
 class ReverseUsers {
     
 
-// @LINE:80
+// @LINE:88
 def delete(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "users/" + implicitly[PathBindable[Long]].unbind("id", id) + "/delete")
 }
                                                 
 
-// @LINE:48
+// @LINE:50
 def create(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "users/new")
 }
                                                 
 
-// @LINE:70
+// @LINE:75
 def edit(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "users/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:71
+// @LINE:76
 def update(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "users/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:27
+// @LINE:28
 def list(p:Int = 0, s:String = "login", o:String = "asc", f:String = ""): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "users" + queryString(List(if(p == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("p", p)), if(s == "login") None else Some(implicitly[QueryStringBindable[String]].unbind("s", s)), if(o == "asc") None else Some(implicitly[QueryStringBindable[String]].unbind("o", o)), if(f == "") None else Some(implicitly[QueryStringBindable[String]].unbind("f", f)))))
 }
                                                 
 
-// @LINE:49
+// @LINE:51
 def save(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "users")
 }
@@ -138,7 +200,7 @@ def index(): Call = {
 }
                                                 
 
-// @LINE:89
+// @LINE:98
 def active(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "users/active/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
@@ -147,54 +209,54 @@ def active(id:Long): Call = {
 }
                           
 
-// @LINE:90
-// @LINE:74
-// @LINE:53
-// @LINE:52
-// @LINE:31
-// @LINE:30
-// @LINE:21
+// @LINE:99
+// @LINE:82
+// @LINE:58
+// @LINE:57
+// @LINE:33
+// @LINE:32
+// @LINE:22
 // @LINE:6
 class ReverseMatches {
     
 
-// @LINE:74
+// @LINE:82
 def delete(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "matches/" + implicitly[PathBindable[Long]].unbind("id", id) + "/delete")
 }
                                                 
 
-// @LINE:90
+// @LINE:99
 def live(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "matches/live/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:30
+// @LINE:32
 def create(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "matches/new")
 }
                                                 
 
-// @LINE:52
+// @LINE:57
 def edit(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "matches/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:53
+// @LINE:58
 def update(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "matches/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:21
+// @LINE:22
 def list(p:Int = 0, s:String = "weather", o:String = "asc", f:String = ""): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "matches" + queryString(List(if(p == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("p", p)), if(s == "weather") None else Some(implicitly[QueryStringBindable[String]].unbind("s", s)), if(o == "asc") None else Some(implicitly[QueryStringBindable[String]].unbind("o", o)), if(f == "") None else Some(implicitly[QueryStringBindable[String]].unbind("f", f)))))
 }
                                                 
 
-// @LINE:31
+// @LINE:33
 def save(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "matches")
 }
@@ -209,54 +271,54 @@ def index(): Call = {
 }
                           
 
-// @LINE:87
-// @LINE:77
-// @LINE:62
-// @LINE:61
-// @LINE:40
-// @LINE:39
-// @LINE:24
+// @LINE:96
+// @LINE:85
+// @LINE:67
+// @LINE:66
+// @LINE:42
+// @LINE:41
+// @LINE:25
 // @LINE:9
 class ReversePlayers {
     
 
-// @LINE:87
+// @LINE:96
 def upload(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "players/upload/" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
 }
                                                 
 
-// @LINE:77
+// @LINE:85
 def delete(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "players/" + implicitly[PathBindable[Long]].unbind("id", id) + "/delete")
 }
                                                 
 
-// @LINE:39
+// @LINE:41
 def create(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "players/new")
 }
                                                 
 
-// @LINE:61
+// @LINE:66
 def edit(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "players/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:62
+// @LINE:67
 def update(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "players/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:24
+// @LINE:25
 def list(p:Int = 0, s:String = "lastname", o:String = "asc", f:String = ""): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "players" + queryString(List(if(p == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("p", p)), if(s == "lastname") None else Some(implicitly[QueryStringBindable[String]].unbind("s", s)), if(o == "asc") None else Some(implicitly[QueryStringBindable[String]].unbind("o", o)), if(f == "") None else Some(implicitly[QueryStringBindable[String]].unbind("f", f)))))
 }
                                                 
 
-// @LINE:40
+// @LINE:42
 def save(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "players")
 }
@@ -271,54 +333,54 @@ def index(): Call = {
 }
                           
 
-// @LINE:86
-// @LINE:75
-// @LINE:56
-// @LINE:55
-// @LINE:34
-// @LINE:33
-// @LINE:22
+// @LINE:95
+// @LINE:83
+// @LINE:61
+// @LINE:60
+// @LINE:36
+// @LINE:35
+// @LINE:23
 // @LINE:13
 class ReverseTeams {
     
 
-// @LINE:86
+// @LINE:95
 def upload(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "teams/upload/" + queryString(List(Some(implicitly[QueryStringBindable[Long]].unbind("id", id)))))
 }
                                                 
 
-// @LINE:75
+// @LINE:83
 def delete(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "teams/" + implicitly[PathBindable[Long]].unbind("id", id) + "/delete")
 }
                                                 
 
-// @LINE:33
+// @LINE:35
 def create(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "teams/new")
 }
                                                 
 
-// @LINE:55
+// @LINE:60
 def edit(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "teams/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:56
+// @LINE:61
 def update(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "teams/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:22
+// @LINE:23
 def list(p:Int = 0, s:String = "name", o:String = "asc", f:String = ""): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "teams" + queryString(List(if(p == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("p", p)), if(s == "name") None else Some(implicitly[QueryStringBindable[String]].unbind("s", s)), if(o == "asc") None else Some(implicitly[QueryStringBindable[String]].unbind("o", o)), if(f == "") None else Some(implicitly[QueryStringBindable[String]].unbind("f", f)))))
 }
                                                 
 
-// @LINE:34
+// @LINE:36
 def save(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "teams")
 }
@@ -333,47 +395,47 @@ def index(): Call = {
 }
                           
 
-// @LINE:76
-// @LINE:59
-// @LINE:58
-// @LINE:37
-// @LINE:36
-// @LINE:23
+// @LINE:84
+// @LINE:64
+// @LINE:63
+// @LINE:39
+// @LINE:38
+// @LINE:24
 // @LINE:8
 class ReverseReferees {
     
 
-// @LINE:76
+// @LINE:84
 def delete(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "referees/" + implicitly[PathBindable[Long]].unbind("id", id) + "/delete")
 }
                                                 
 
-// @LINE:36
+// @LINE:38
 def create(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "referees/new")
 }
                                                 
 
-// @LINE:58
+// @LINE:63
 def edit(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "referees/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:59
+// @LINE:64
 def update(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "referees/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:23
+// @LINE:24
 def list(p:Int = 0, s:String = "lastname", o:String = "asc", f:String = ""): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "referees" + queryString(List(if(p == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("p", p)), if(s == "lastname") None else Some(implicitly[QueryStringBindable[String]].unbind("s", s)), if(o == "asc") None else Some(implicitly[QueryStringBindable[String]].unbind("o", o)), if(f == "") None else Some(implicitly[QueryStringBindable[String]].unbind("f", f)))))
 }
                                                 
 
-// @LINE:37
+// @LINE:39
 def save(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "referees")
 }
@@ -388,25 +450,25 @@ def index(): Call = {
 }
                           
 
+// @LINE:19
 // @LINE:18
 // @LINE:17
-// @LINE:16
 class ReverseApplication {
     
 
-// @LINE:18
+// @LINE:19
 def logout(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "logout")
 }
                                                 
 
-// @LINE:17
+// @LINE:18
 def authenticate(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "login")
 }
                                                 
 
-// @LINE:16
+// @LINE:17
 def login(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "login")
 }
@@ -415,47 +477,47 @@ def login(): Call = {
 }
                           
 
-// @LINE:79
-// @LINE:68
-// @LINE:67
-// @LINE:46
-// @LINE:45
-// @LINE:26
+// @LINE:87
+// @LINE:73
+// @LINE:72
+// @LINE:48
+// @LINE:47
+// @LINE:27
 // @LINE:11
 class ReverseGames {
     
 
-// @LINE:79
+// @LINE:87
 def delete(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "games/" + implicitly[PathBindable[Long]].unbind("id", id) + "/delete")
 }
                                                 
 
-// @LINE:45
+// @LINE:47
 def create(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "games/new")
 }
                                                 
 
-// @LINE:67
+// @LINE:72
 def edit(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "games/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:68
+// @LINE:73
 def update(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "games/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:26
+// @LINE:27
 def list(p:Int = 0, s:String = "name", o:String = "asc", f:String = ""): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "games" + queryString(List(if(p == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("p", p)), if(s == "name") None else Some(implicitly[QueryStringBindable[String]].unbind("s", s)), if(o == "asc") None else Some(implicitly[QueryStringBindable[String]].unbind("o", o)), if(f == "") None else Some(implicitly[QueryStringBindable[String]].unbind("f", f)))))
 }
                                                 
 
-// @LINE:46
+// @LINE:48
 def save(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "games")
 }
@@ -470,47 +532,47 @@ def index(): Call = {
 }
                           
 
-// @LINE:78
-// @LINE:65
-// @LINE:64
-// @LINE:43
-// @LINE:42
-// @LINE:25
+// @LINE:86
+// @LINE:70
+// @LINE:69
+// @LINE:45
+// @LINE:44
+// @LINE:26
 // @LINE:10
 class ReverseSeasons {
     
 
-// @LINE:78
+// @LINE:86
 def delete(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "seasons/" + implicitly[PathBindable[Long]].unbind("id", id) + "/delete")
 }
                                                 
 
-// @LINE:42
+// @LINE:44
 def create(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "seasons/new")
 }
                                                 
 
-// @LINE:64
+// @LINE:69
 def edit(id:Long): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "seasons/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:65
+// @LINE:70
 def update(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "seasons/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
-// @LINE:25
+// @LINE:26
 def list(p:Int = 0, s:String = "year_start", o:String = "asc", f:String = ""): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "seasons" + queryString(List(if(p == 0) None else Some(implicitly[QueryStringBindable[Int]].unbind("p", p)), if(s == "year_start") None else Some(implicitly[QueryStringBindable[String]].unbind("s", s)), if(o == "asc") None else Some(implicitly[QueryStringBindable[String]].unbind("o", o)), if(f == "") None else Some(implicitly[QueryStringBindable[String]].unbind("f", f)))))
 }
                                                 
 
-// @LINE:43
+// @LINE:45
 def save(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "seasons")
 }
@@ -528,56 +590,63 @@ def index(): Call = {
                   
 
 
-// @LINE:90
+// @LINE:99
+// @LINE:98
+// @LINE:96
+// @LINE:95
+// @LINE:92
 // @LINE:89
+// @LINE:88
 // @LINE:87
 // @LINE:86
+// @LINE:85
+// @LINE:84
 // @LINE:83
-// @LINE:80
+// @LINE:82
 // @LINE:79
 // @LINE:78
-// @LINE:77
 // @LINE:76
 // @LINE:75
-// @LINE:74
-// @LINE:71
+// @LINE:73
+// @LINE:72
 // @LINE:70
-// @LINE:68
+// @LINE:69
 // @LINE:67
-// @LINE:65
+// @LINE:66
 // @LINE:64
-// @LINE:62
+// @LINE:63
 // @LINE:61
-// @LINE:59
+// @LINE:60
 // @LINE:58
-// @LINE:56
-// @LINE:55
+// @LINE:57
+// @LINE:54
 // @LINE:53
-// @LINE:52
-// @LINE:49
+// @LINE:51
+// @LINE:50
 // @LINE:48
-// @LINE:46
+// @LINE:47
 // @LINE:45
-// @LINE:43
+// @LINE:44
 // @LINE:42
-// @LINE:40
+// @LINE:41
 // @LINE:39
-// @LINE:37
+// @LINE:38
 // @LINE:36
-// @LINE:34
+// @LINE:35
 // @LINE:33
-// @LINE:31
-// @LINE:30
+// @LINE:32
+// @LINE:29
+// @LINE:28
 // @LINE:27
 // @LINE:26
 // @LINE:25
 // @LINE:24
 // @LINE:23
 // @LINE:22
-// @LINE:21
+// @LINE:19
 // @LINE:18
 // @LINE:17
-// @LINE:16
+// @LINE:14
 // @LINE:13
 // @LINE:12
 // @LINE:11
@@ -587,11 +656,11 @@ def index(): Call = {
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:83
+// @LINE:92
 class ReverseAssets {
     
 
-// @LINE:83
+// @LINE:92
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -606,17 +675,107 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
               
 
 // @LINE:89
-// @LINE:80
-// @LINE:71
-// @LINE:70
-// @LINE:49
-// @LINE:48
-// @LINE:27
+// @LINE:79
+// @LINE:78
+// @LINE:54
+// @LINE:53
+// @LINE:29
+// @LINE:14
+class ReverseVideos {
+    
+
+// @LINE:89
+def delete : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Videos.delete",
+   """
+      function(id) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "videos/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/delete"})
+      }
+   """
+)
+                        
+
+// @LINE:53
+def create : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Videos.create",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "videos/new"})
+      }
+   """
+)
+                        
+
+// @LINE:78
+def edit : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Videos.edit",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "videos/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
+      }
+   """
+)
+                        
+
+// @LINE:79
+def update : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Videos.update",
+   """
+      function(id) {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "videos/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
+      }
+   """
+)
+                        
+
+// @LINE:29
+def list : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Videos.list",
+   """
+      function(p,s,o,f) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "videos" + _qS([(p == null ? null : (""" + implicitly[QueryStringBindable[Int]].javascriptUnbind + """)("p", p)), (s == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("s", s)), (o == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("o", o)), (f == null ? null : (""" + implicitly[QueryStringBindable[String]].javascriptUnbind + """)("f", f))])})
+      }
+   """
+)
+                        
+
+// @LINE:54
+def save : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Videos.save",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "videos"})
+      }
+   """
+)
+                        
+
+// @LINE:14
+def index : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Videos.index",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "videos/index"})
+      }
+   """
+)
+                        
+    
+}
+              
+
+// @LINE:98
+// @LINE:88
+// @LINE:76
+// @LINE:75
+// @LINE:51
+// @LINE:50
+// @LINE:28
 // @LINE:12
 class ReverseUsers {
     
 
-// @LINE:80
+// @LINE:88
 def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Users.delete",
    """
@@ -627,7 +786,7 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:48
+// @LINE:50
 def create : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Users.create",
    """
@@ -638,7 +797,7 @@ def create : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:70
+// @LINE:75
 def edit : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Users.edit",
    """
@@ -649,7 +808,7 @@ def edit : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:71
+// @LINE:76
 def update : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Users.update",
    """
@@ -660,7 +819,7 @@ def update : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:27
+// @LINE:28
 def list : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Users.list",
    """
@@ -671,7 +830,7 @@ def list : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:49
+// @LINE:51
 def save : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Users.save",
    """
@@ -693,7 +852,7 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:89
+// @LINE:98
 def active : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Users.active",
    """
@@ -707,18 +866,18 @@ def active : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:90
-// @LINE:74
-// @LINE:53
-// @LINE:52
-// @LINE:31
-// @LINE:30
-// @LINE:21
+// @LINE:99
+// @LINE:82
+// @LINE:58
+// @LINE:57
+// @LINE:33
+// @LINE:32
+// @LINE:22
 // @LINE:6
 class ReverseMatches {
     
 
-// @LINE:74
+// @LINE:82
 def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Matches.delete",
    """
@@ -729,7 +888,7 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:90
+// @LINE:99
 def live : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Matches.live",
    """
@@ -740,7 +899,7 @@ def live : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:30
+// @LINE:32
 def create : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Matches.create",
    """
@@ -751,7 +910,7 @@ def create : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:52
+// @LINE:57
 def edit : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Matches.edit",
    """
@@ -762,7 +921,7 @@ def edit : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:53
+// @LINE:58
 def update : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Matches.update",
    """
@@ -773,7 +932,7 @@ def update : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:21
+// @LINE:22
 def list : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Matches.list",
    """
@@ -784,7 +943,7 @@ def list : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:31
+// @LINE:33
 def save : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Matches.save",
    """
@@ -809,18 +968,18 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:87
-// @LINE:77
-// @LINE:62
-// @LINE:61
-// @LINE:40
-// @LINE:39
-// @LINE:24
+// @LINE:96
+// @LINE:85
+// @LINE:67
+// @LINE:66
+// @LINE:42
+// @LINE:41
+// @LINE:25
 // @LINE:9
 class ReversePlayers {
     
 
-// @LINE:87
+// @LINE:96
 def upload : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Players.upload",
    """
@@ -831,7 +990,7 @@ def upload : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:77
+// @LINE:85
 def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Players.delete",
    """
@@ -842,7 +1001,7 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:39
+// @LINE:41
 def create : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Players.create",
    """
@@ -853,7 +1012,7 @@ def create : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:61
+// @LINE:66
 def edit : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Players.edit",
    """
@@ -864,7 +1023,7 @@ def edit : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:62
+// @LINE:67
 def update : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Players.update",
    """
@@ -875,7 +1034,7 @@ def update : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:24
+// @LINE:25
 def list : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Players.list",
    """
@@ -886,7 +1045,7 @@ def list : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:40
+// @LINE:42
 def save : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Players.save",
    """
@@ -911,18 +1070,18 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:86
-// @LINE:75
-// @LINE:56
-// @LINE:55
-// @LINE:34
-// @LINE:33
-// @LINE:22
+// @LINE:95
+// @LINE:83
+// @LINE:61
+// @LINE:60
+// @LINE:36
+// @LINE:35
+// @LINE:23
 // @LINE:13
 class ReverseTeams {
     
 
-// @LINE:86
+// @LINE:95
 def upload : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Teams.upload",
    """
@@ -933,7 +1092,7 @@ def upload : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:75
+// @LINE:83
 def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Teams.delete",
    """
@@ -944,7 +1103,7 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:33
+// @LINE:35
 def create : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Teams.create",
    """
@@ -955,7 +1114,7 @@ def create : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:55
+// @LINE:60
 def edit : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Teams.edit",
    """
@@ -966,7 +1125,7 @@ def edit : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:56
+// @LINE:61
 def update : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Teams.update",
    """
@@ -977,7 +1136,7 @@ def update : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:22
+// @LINE:23
 def list : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Teams.list",
    """
@@ -988,7 +1147,7 @@ def list : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:34
+// @LINE:36
 def save : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Teams.save",
    """
@@ -1013,17 +1172,17 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:76
-// @LINE:59
-// @LINE:58
-// @LINE:37
-// @LINE:36
-// @LINE:23
+// @LINE:84
+// @LINE:64
+// @LINE:63
+// @LINE:39
+// @LINE:38
+// @LINE:24
 // @LINE:8
 class ReverseReferees {
     
 
-// @LINE:76
+// @LINE:84
 def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Referees.delete",
    """
@@ -1034,7 +1193,7 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:36
+// @LINE:38
 def create : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Referees.create",
    """
@@ -1045,7 +1204,7 @@ def create : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:58
+// @LINE:63
 def edit : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Referees.edit",
    """
@@ -1056,7 +1215,7 @@ def edit : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:59
+// @LINE:64
 def update : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Referees.update",
    """
@@ -1067,7 +1226,7 @@ def update : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:23
+// @LINE:24
 def list : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Referees.list",
    """
@@ -1078,7 +1237,7 @@ def list : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:37
+// @LINE:39
 def save : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Referees.save",
    """
@@ -1103,13 +1262,13 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:19
 // @LINE:18
 // @LINE:17
-// @LINE:16
 class ReverseApplication {
     
 
-// @LINE:18
+// @LINE:19
 def logout : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.logout",
    """
@@ -1120,7 +1279,7 @@ def logout : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:17
+// @LINE:18
 def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.authenticate",
    """
@@ -1131,7 +1290,7 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:16
+// @LINE:17
 def login : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Application.login",
    """
@@ -1145,17 +1304,17 @@ def login : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:79
-// @LINE:68
-// @LINE:67
-// @LINE:46
-// @LINE:45
-// @LINE:26
+// @LINE:87
+// @LINE:73
+// @LINE:72
+// @LINE:48
+// @LINE:47
+// @LINE:27
 // @LINE:11
 class ReverseGames {
     
 
-// @LINE:79
+// @LINE:87
 def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Games.delete",
    """
@@ -1166,7 +1325,7 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:45
+// @LINE:47
 def create : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Games.create",
    """
@@ -1177,7 +1336,7 @@ def create : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:67
+// @LINE:72
 def edit : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Games.edit",
    """
@@ -1188,7 +1347,7 @@ def edit : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:68
+// @LINE:73
 def update : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Games.update",
    """
@@ -1199,7 +1358,7 @@ def update : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:26
+// @LINE:27
 def list : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Games.list",
    """
@@ -1210,7 +1369,7 @@ def list : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:46
+// @LINE:48
 def save : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Games.save",
    """
@@ -1235,17 +1394,17 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
-// @LINE:78
-// @LINE:65
-// @LINE:64
-// @LINE:43
-// @LINE:42
-// @LINE:25
+// @LINE:86
+// @LINE:70
+// @LINE:69
+// @LINE:45
+// @LINE:44
+// @LINE:26
 // @LINE:10
 class ReverseSeasons {
     
 
-// @LINE:78
+// @LINE:86
 def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Seasons.delete",
    """
@@ -1256,7 +1415,7 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:42
+// @LINE:44
 def create : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Seasons.create",
    """
@@ -1267,7 +1426,7 @@ def create : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:64
+// @LINE:69
 def edit : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Seasons.edit",
    """
@@ -1278,7 +1437,7 @@ def edit : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:65
+// @LINE:70
 def update : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Seasons.update",
    """
@@ -1289,7 +1448,7 @@ def update : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:25
+// @LINE:26
 def list : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Seasons.list",
    """
@@ -1300,7 +1459,7 @@ def list : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:43
+// @LINE:45
 def save : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Seasons.save",
    """
@@ -1328,56 +1487,63 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:90
+// @LINE:99
+// @LINE:98
+// @LINE:96
+// @LINE:95
+// @LINE:92
 // @LINE:89
+// @LINE:88
 // @LINE:87
 // @LINE:86
+// @LINE:85
+// @LINE:84
 // @LINE:83
-// @LINE:80
+// @LINE:82
 // @LINE:79
 // @LINE:78
-// @LINE:77
 // @LINE:76
 // @LINE:75
-// @LINE:74
-// @LINE:71
+// @LINE:73
+// @LINE:72
 // @LINE:70
-// @LINE:68
+// @LINE:69
 // @LINE:67
-// @LINE:65
+// @LINE:66
 // @LINE:64
-// @LINE:62
+// @LINE:63
 // @LINE:61
-// @LINE:59
+// @LINE:60
 // @LINE:58
-// @LINE:56
-// @LINE:55
+// @LINE:57
+// @LINE:54
 // @LINE:53
-// @LINE:52
-// @LINE:49
+// @LINE:51
+// @LINE:50
 // @LINE:48
-// @LINE:46
+// @LINE:47
 // @LINE:45
-// @LINE:43
+// @LINE:44
 // @LINE:42
-// @LINE:40
+// @LINE:41
 // @LINE:39
-// @LINE:37
+// @LINE:38
 // @LINE:36
-// @LINE:34
+// @LINE:35
 // @LINE:33
-// @LINE:31
-// @LINE:30
+// @LINE:32
+// @LINE:29
+// @LINE:28
 // @LINE:27
 // @LINE:26
 // @LINE:25
 // @LINE:24
 // @LINE:23
 // @LINE:22
-// @LINE:21
+// @LINE:19
 // @LINE:18
 // @LINE:17
-// @LINE:16
+// @LINE:14
 // @LINE:13
 // @LINE:12
 // @LINE:11
@@ -1388,11 +1554,11 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:83
+// @LINE:92
 class ReverseAssets {
     
 
-// @LINE:83
+// @LINE:92
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -1402,47 +1568,102 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
                           
 
 // @LINE:89
-// @LINE:80
-// @LINE:71
-// @LINE:70
-// @LINE:49
-// @LINE:48
-// @LINE:27
+// @LINE:79
+// @LINE:78
+// @LINE:54
+// @LINE:53
+// @LINE:29
+// @LINE:14
+class ReverseVideos {
+    
+
+// @LINE:89
+def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Videos.delete(id), HandlerDef(this, "controllers.Videos", "delete", Seq(classOf[Long]), "POST", """""", _prefix + """videos/$id<[^/]+>/delete""")
+)
+                      
+
+// @LINE:53
+def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Videos.create(), HandlerDef(this, "controllers.Videos", "create", Seq(), "GET", """""", _prefix + """videos/new""")
+)
+                      
+
+// @LINE:78
+def edit(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Videos.edit(id), HandlerDef(this, "controllers.Videos", "edit", Seq(classOf[Long]), "GET", """""", _prefix + """videos/$id<[^/]+>""")
+)
+                      
+
+// @LINE:79
+def update(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Videos.update(id), HandlerDef(this, "controllers.Videos", "update", Seq(classOf[Long]), "POST", """""", _prefix + """videos/$id<[^/]+>""")
+)
+                      
+
+// @LINE:29
+def list(p:Int, s:String, o:String, f:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Videos.list(p, s, o, f), HandlerDef(this, "controllers.Videos", "list", Seq(classOf[Int], classOf[String], classOf[String], classOf[String]), "GET", """""", _prefix + """videos""")
+)
+                      
+
+// @LINE:54
+def save(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Videos.save(), HandlerDef(this, "controllers.Videos", "save", Seq(), "POST", """""", _prefix + """videos""")
+)
+                      
+
+// @LINE:14
+def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Videos.index(), HandlerDef(this, "controllers.Videos", "index", Seq(), "GET", """""", _prefix + """videos/index""")
+)
+                      
+    
+}
+                          
+
+// @LINE:98
+// @LINE:88
+// @LINE:76
+// @LINE:75
+// @LINE:51
+// @LINE:50
+// @LINE:28
 // @LINE:12
 class ReverseUsers {
     
 
-// @LINE:80
+// @LINE:88
 def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Users.delete(id), HandlerDef(this, "controllers.Users", "delete", Seq(classOf[Long]), "POST", """""", _prefix + """users/$id<[^/]+>/delete""")
 )
                       
 
-// @LINE:48
+// @LINE:50
 def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Users.create(), HandlerDef(this, "controllers.Users", "create", Seq(), "GET", """""", _prefix + """users/new""")
 )
                       
 
-// @LINE:70
+// @LINE:75
 def edit(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Users.edit(id), HandlerDef(this, "controllers.Users", "edit", Seq(classOf[Long]), "GET", """""", _prefix + """users/$id<[^/]+>""")
 )
                       
 
-// @LINE:71
+// @LINE:76
 def update(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Users.update(id), HandlerDef(this, "controllers.Users", "update", Seq(classOf[Long]), "POST", """""", _prefix + """users/$id<[^/]+>""")
 )
                       
 
-// @LINE:27
+// @LINE:28
 def list(p:Int, s:String, o:String, f:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Users.list(p, s, o, f), HandlerDef(this, "controllers.Users", "list", Seq(classOf[Int], classOf[String], classOf[String], classOf[String]), "GET", """""", _prefix + """users""")
 )
                       
 
-// @LINE:49
+// @LINE:51
 def save(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Users.save(), HandlerDef(this, "controllers.Users", "save", Seq(), "POST", """""", _prefix + """users""")
 )
@@ -1454,7 +1675,7 @@ def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:89
+// @LINE:98
 def active(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Users.active(id), HandlerDef(this, "controllers.Users", "active", Seq(classOf[Long]), "GET", """""", _prefix + """users/active/$id<[^/]+>""")
 )
@@ -1463,54 +1684,54 @@ def active(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:90
-// @LINE:74
-// @LINE:53
-// @LINE:52
-// @LINE:31
-// @LINE:30
-// @LINE:21
+// @LINE:99
+// @LINE:82
+// @LINE:58
+// @LINE:57
+// @LINE:33
+// @LINE:32
+// @LINE:22
 // @LINE:6
 class ReverseMatches {
     
 
-// @LINE:74
+// @LINE:82
 def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Matches.delete(id), HandlerDef(this, "controllers.Matches", "delete", Seq(classOf[Long]), "POST", """ Delete""", _prefix + """matches/$id<[^/]+>/delete""")
 )
                       
 
-// @LINE:90
+// @LINE:99
 def live(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Matches.live(id), HandlerDef(this, "controllers.Matches", "live", Seq(classOf[Long]), "GET", """""", _prefix + """matches/live/$id<[^/]+>""")
 )
                       
 
-// @LINE:30
+// @LINE:32
 def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Matches.create(), HandlerDef(this, "controllers.Matches", "create", Seq(), "GET", """ Add""", _prefix + """matches/new""")
 )
                       
 
-// @LINE:52
+// @LINE:57
 def edit(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Matches.edit(id), HandlerDef(this, "controllers.Matches", "edit", Seq(classOf[Long]), "GET", """ Edit""", _prefix + """matches/$id<[^/]+>""")
 )
                       
 
-// @LINE:53
+// @LINE:58
 def update(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Matches.update(id), HandlerDef(this, "controllers.Matches", "update", Seq(classOf[Long]), "POST", """""", _prefix + """matches/$id<[^/]+>""")
 )
                       
 
-// @LINE:21
+// @LINE:22
 def list(p:Int, s:String, o:String, f:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Matches.list(p, s, o, f), HandlerDef(this, "controllers.Matches", "list", Seq(classOf[Int], classOf[String], classOf[String], classOf[String]), "GET", """  list (look at the default values for pagination parameters)""", _prefix + """matches""")
 )
                       
 
-// @LINE:31
+// @LINE:33
 def save(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Matches.save(), HandlerDef(this, "controllers.Matches", "save", Seq(), "POST", """""", _prefix + """matches""")
 )
@@ -1525,54 +1746,54 @@ def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:87
-// @LINE:77
-// @LINE:62
-// @LINE:61
-// @LINE:40
-// @LINE:39
-// @LINE:24
+// @LINE:96
+// @LINE:85
+// @LINE:67
+// @LINE:66
+// @LINE:42
+// @LINE:41
+// @LINE:25
 // @LINE:9
 class ReversePlayers {
     
 
-// @LINE:87
+// @LINE:96
 def upload(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Players.upload(id), HandlerDef(this, "controllers.Players", "upload", Seq(classOf[Long]), "POST", """""", _prefix + """players/upload/""")
 )
                       
 
-// @LINE:77
+// @LINE:85
 def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Players.delete(id), HandlerDef(this, "controllers.Players", "delete", Seq(classOf[Long]), "POST", """""", _prefix + """players/$id<[^/]+>/delete""")
 )
                       
 
-// @LINE:39
+// @LINE:41
 def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Players.create(), HandlerDef(this, "controllers.Players", "create", Seq(), "GET", """""", _prefix + """players/new""")
 )
                       
 
-// @LINE:61
+// @LINE:66
 def edit(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Players.edit(id), HandlerDef(this, "controllers.Players", "edit", Seq(classOf[Long]), "GET", """""", _prefix + """players/$id<[^/]+>""")
 )
                       
 
-// @LINE:62
+// @LINE:67
 def update(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Players.update(id), HandlerDef(this, "controllers.Players", "update", Seq(classOf[Long]), "POST", """""", _prefix + """players/$id<[^/]+>""")
 )
                       
 
-// @LINE:24
+// @LINE:25
 def list(p:Int, s:String, o:String, f:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Players.list(p, s, o, f), HandlerDef(this, "controllers.Players", "list", Seq(classOf[Int], classOf[String], classOf[String], classOf[String]), "GET", """""", _prefix + """players""")
 )
                       
 
-// @LINE:40
+// @LINE:42
 def save(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Players.save(), HandlerDef(this, "controllers.Players", "save", Seq(), "POST", """""", _prefix + """players""")
 )
@@ -1587,54 +1808,54 @@ def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:86
-// @LINE:75
-// @LINE:56
-// @LINE:55
-// @LINE:34
-// @LINE:33
-// @LINE:22
+// @LINE:95
+// @LINE:83
+// @LINE:61
+// @LINE:60
+// @LINE:36
+// @LINE:35
+// @LINE:23
 // @LINE:13
 class ReverseTeams {
     
 
-// @LINE:86
+// @LINE:95
 def upload(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Teams.upload(id), HandlerDef(this, "controllers.Teams", "upload", Seq(classOf[Long]), "POST", """ Upload""", _prefix + """teams/upload/""")
 )
                       
 
-// @LINE:75
+// @LINE:83
 def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Teams.delete(id), HandlerDef(this, "controllers.Teams", "delete", Seq(classOf[Long]), "POST", """""", _prefix + """teams/$id<[^/]+>/delete""")
 )
                       
 
-// @LINE:33
+// @LINE:35
 def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Teams.create(), HandlerDef(this, "controllers.Teams", "create", Seq(), "GET", """""", _prefix + """teams/new""")
 )
                       
 
-// @LINE:55
+// @LINE:60
 def edit(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Teams.edit(id), HandlerDef(this, "controllers.Teams", "edit", Seq(classOf[Long]), "GET", """""", _prefix + """teams/$id<[^/]+>""")
 )
                       
 
-// @LINE:56
+// @LINE:61
 def update(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Teams.update(id), HandlerDef(this, "controllers.Teams", "update", Seq(classOf[Long]), "POST", """""", _prefix + """teams/$id<[^/]+>""")
 )
                       
 
-// @LINE:22
+// @LINE:23
 def list(p:Int, s:String, o:String, f:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Teams.list(p, s, o, f), HandlerDef(this, "controllers.Teams", "list", Seq(classOf[Int], classOf[String], classOf[String], classOf[String]), "GET", """""", _prefix + """teams""")
 )
                       
 
-// @LINE:34
+// @LINE:36
 def save(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Teams.save(), HandlerDef(this, "controllers.Teams", "save", Seq(), "POST", """""", _prefix + """teams""")
 )
@@ -1649,47 +1870,47 @@ def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:76
-// @LINE:59
-// @LINE:58
-// @LINE:37
-// @LINE:36
-// @LINE:23
+// @LINE:84
+// @LINE:64
+// @LINE:63
+// @LINE:39
+// @LINE:38
+// @LINE:24
 // @LINE:8
 class ReverseReferees {
     
 
-// @LINE:76
+// @LINE:84
 def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Referees.delete(id), HandlerDef(this, "controllers.Referees", "delete", Seq(classOf[Long]), "POST", """""", _prefix + """referees/$id<[^/]+>/delete""")
 )
                       
 
-// @LINE:36
+// @LINE:38
 def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Referees.create(), HandlerDef(this, "controllers.Referees", "create", Seq(), "GET", """""", _prefix + """referees/new""")
 )
                       
 
-// @LINE:58
+// @LINE:63
 def edit(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Referees.edit(id), HandlerDef(this, "controllers.Referees", "edit", Seq(classOf[Long]), "GET", """""", _prefix + """referees/$id<[^/]+>""")
 )
                       
 
-// @LINE:59
+// @LINE:64
 def update(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Referees.update(id), HandlerDef(this, "controllers.Referees", "update", Seq(classOf[Long]), "POST", """""", _prefix + """referees/$id<[^/]+>""")
 )
                       
 
-// @LINE:23
+// @LINE:24
 def list(p:Int, s:String, o:String, f:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Referees.list(p, s, o, f), HandlerDef(this, "controllers.Referees", "list", Seq(classOf[Int], classOf[String], classOf[String], classOf[String]), "GET", """""", _prefix + """referees""")
 )
                       
 
-// @LINE:37
+// @LINE:39
 def save(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Referees.save(), HandlerDef(this, "controllers.Referees", "save", Seq(), "POST", """""", _prefix + """referees""")
 )
@@ -1704,25 +1925,25 @@ def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
+// @LINE:19
 // @LINE:18
 // @LINE:17
-// @LINE:16
 class ReverseApplication {
     
 
-// @LINE:18
+// @LINE:19
 def logout(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.logout(), HandlerDef(this, "controllers.Application", "logout", Seq(), "GET", """""", _prefix + """logout""")
 )
                       
 
-// @LINE:17
+// @LINE:18
 def authenticate(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.authenticate(), HandlerDef(this, "controllers.Application", "authenticate", Seq(), "POST", """""", _prefix + """login""")
 )
                       
 
-// @LINE:16
+// @LINE:17
 def login(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.login(), HandlerDef(this, "controllers.Application", "login", Seq(), "GET", """ Authentication""", _prefix + """login""")
 )
@@ -1731,47 +1952,47 @@ def login(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:79
-// @LINE:68
-// @LINE:67
-// @LINE:46
-// @LINE:45
-// @LINE:26
+// @LINE:87
+// @LINE:73
+// @LINE:72
+// @LINE:48
+// @LINE:47
+// @LINE:27
 // @LINE:11
 class ReverseGames {
     
 
-// @LINE:79
+// @LINE:87
 def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Games.delete(id), HandlerDef(this, "controllers.Games", "delete", Seq(classOf[Long]), "POST", """""", _prefix + """games/$id<[^/]+>/delete""")
 )
                       
 
-// @LINE:45
+// @LINE:47
 def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Games.create(), HandlerDef(this, "controllers.Games", "create", Seq(), "GET", """""", _prefix + """games/new""")
 )
                       
 
-// @LINE:67
+// @LINE:72
 def edit(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Games.edit(id), HandlerDef(this, "controllers.Games", "edit", Seq(classOf[Long]), "GET", """""", _prefix + """games/$id<[^/]+>""")
 )
                       
 
-// @LINE:68
+// @LINE:73
 def update(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Games.update(id), HandlerDef(this, "controllers.Games", "update", Seq(classOf[Long]), "POST", """""", _prefix + """games/$id<[^/]+>""")
 )
                       
 
-// @LINE:26
+// @LINE:27
 def list(p:Int, s:String, o:String, f:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Games.list(p, s, o, f), HandlerDef(this, "controllers.Games", "list", Seq(classOf[Int], classOf[String], classOf[String], classOf[String]), "GET", """""", _prefix + """games""")
 )
                       
 
-// @LINE:46
+// @LINE:48
 def save(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Games.save(), HandlerDef(this, "controllers.Games", "save", Seq(), "POST", """""", _prefix + """games""")
 )
@@ -1786,47 +2007,47 @@ def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
-// @LINE:78
-// @LINE:65
-// @LINE:64
-// @LINE:43
-// @LINE:42
-// @LINE:25
+// @LINE:86
+// @LINE:70
+// @LINE:69
+// @LINE:45
+// @LINE:44
+// @LINE:26
 // @LINE:10
 class ReverseSeasons {
     
 
-// @LINE:78
+// @LINE:86
 def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Seasons.delete(id), HandlerDef(this, "controllers.Seasons", "delete", Seq(classOf[Long]), "POST", """""", _prefix + """seasons/$id<[^/]+>/delete""")
 )
                       
 
-// @LINE:42
+// @LINE:44
 def create(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Seasons.create(), HandlerDef(this, "controllers.Seasons", "create", Seq(), "GET", """""", _prefix + """seasons/new""")
 )
                       
 
-// @LINE:64
+// @LINE:69
 def edit(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Seasons.edit(id), HandlerDef(this, "controllers.Seasons", "edit", Seq(classOf[Long]), "GET", """""", _prefix + """seasons/$id<[^/]+>""")
 )
                       
 
-// @LINE:65
+// @LINE:70
 def update(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Seasons.update(id), HandlerDef(this, "controllers.Seasons", "update", Seq(classOf[Long]), "POST", """""", _prefix + """seasons/$id<[^/]+>""")
 )
                       
 
-// @LINE:25
+// @LINE:26
 def list(p:Int, s:String, o:String, f:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Seasons.list(p, s, o, f), HandlerDef(this, "controllers.Seasons", "list", Seq(classOf[Int], classOf[String], classOf[String], classOf[String]), "GET", """""", _prefix + """seasons""")
 )
                       
 
-// @LINE:43
+// @LINE:45
 def save(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Seasons.save(), HandlerDef(this, "controllers.Seasons", "save", Seq(), "POST", """""", _prefix + """seasons""")
 )

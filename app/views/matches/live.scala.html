@@ -1,4 +1,4 @@
-@(matchForm: Form[Match])
+@(matchForm: Form[Match], videos: List[Video])
 
 <html>
 <head>
@@ -106,12 +106,14 @@
         <div class="panelContent">
             <div class="moreItems"><a href="/">zobacz wszystkie <img src="@routes.Assets.at("images/list_arrow.png")" border="0" /></a></div>
         </div>
+        @if(!videos.isEmpty){
         <div class="panelHeader">Wideo</div>
         <div class="panelContent">
-            <iframe class="videoItem" title="YouTube video player" width="252" height="160" src="http://www.youtube.com/embed/utXXBcW55Dg?rel=0" frameborder="0" allowfullscreen></iframe>
-            <iframe class="videoItem" title="YouTube video player" width="252" height="160" src="http://www.youtube.com/embed/36AFnuBhRy8?rel=0" frameborder="0" allowfullscreen></iframe>
-            <div class="moreItems"><a href="/">zobacz wszystkie <img src="@routes.Assets.at("images/list_arrow.png")" border="0" /></a></div>
-        </div>
+            @for(v <- videos) {
+                <iframe class="videoItem" title="YouTube video player" width="252" height="160" src="@v.path" frameborder="0" allowfullscreen style="max-width:100%;"></iframe>
+            }
+         </div>
+        }
     </div>
 
 </body>

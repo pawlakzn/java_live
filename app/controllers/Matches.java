@@ -4,11 +4,12 @@ import play.mvc.*;
 import play.data.*;
 import play.api.mvc.Call;
 import static play.data.Form.*;
+import play.api.data.Forms.*;
 
 import views.html.referees.*;
 import views.html.*;
 
-
+import java.util.List;
 import models.*;
 
 import java.text.SimpleDateFormat;
@@ -38,10 +39,14 @@ public class Matches extends Controller {
 
     public static Result edit(Long id) {
         Match match = Match.find.byId(id);
+        //List<Video> videos = Video.find.where()
+        //                                        .eq("match_id", id)
+        //                                        .findList();
 
-        Form<Match> matchForm = form(Match.class).fill(
-                match
-        );
+        //Form<List<Video>> videosForm = form(List.Video.class).fill(videos);
+      //Form<List> videosForm = Form( mapping( "v" -> list(videos)  ));
+     Form<Match> matchForm = form(Match.class).fill( match );
+
 
         Form<Statistic> statisticForm = form(Statistic.class).fill(
                 Statistic.find.byId(match.statistics.id)
@@ -55,6 +60,7 @@ public class Matches extends Controller {
     public static Result update(Long id) {
         Form<Match> matchForm = form(Match.class).bindFromRequest();
         Form<Statistic> statisticForm = form(Statistic.class).bindFromRequest();
+        //Form<List> videosForm = form(List.class).bindFromRequest();
 
         if(matchForm.hasErrors() || statisticForm.hasErrors()) {
             return badRequest(views.html.matches.editForm.render(id, matchForm, statisticForm));
@@ -106,11 +112,15 @@ public class Matches extends Controller {
     }
 
     public static Result live(Long id) {
+        Match match = Match.find.byId(id);
+        List<Video> videos = Video.find.where()
+                                                .eq("vmatch_id", id)
+                                                .findList();
         Form<Match> matchForm = form(Match.class).fill(
-                Match.find.byId(id)
+                match
         );
         return ok(
-                views.html.matches.live.render(matchForm)
+                views.html.matches.live.render(matchForm, videos)
         );
     }
 

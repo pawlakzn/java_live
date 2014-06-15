@@ -1,0 +1,35 @@
+@(videoForm: Form[Video])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Dodaj wideo</h1>
+
+@form(routes.Videos.save()) {
+
+<fieldset>
+
+    @inputText(videoForm("name"), '_label -> "Nazwa")
+
+    @select(
+    videoForm("vmatch.id"),
+    options(Match.options),
+    '_label -> "Mecz", '_default -> "-- Wybierz mecz --",
+    '_showConstraints -> false
+    )
+
+    @textarea(videoForm("path"), '_label -> "Ścieżka")
+
+</fieldset>
+
+<div class="actions">
+    <input type="submit" value="Dodaj wideo" class="btn primary"> or
+    <a href="@routes.Videos.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+}

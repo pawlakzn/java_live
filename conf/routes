@@ -11,6 +11,7 @@ GET     /seasons/index              controllers.Seasons.index()
 GET     /games/index                controllers.Games.index()
 GET     /users/index                controllers.Users.index()
 GET     /teams/index                controllers.Teams.index()
+GET     /videos/index                controllers.Videos.index()
 
 # Authentication
 GET     /login                              controllers.Application.login()
@@ -25,6 +26,7 @@ GET     /players                    controllers.Players.list(p:Int ?= 0, s ?= "l
 GET     /seasons                    controllers.Seasons.list(p:Int ?= 0, s ?= "year_start", o ?= "asc", f ?= "")
 GET     /games                      controllers.Games.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
 GET     /users                      controllers.Users.list(p:Int ?= 0, s ?= "login", o ?= "asc", f ?= "")
+GET     /videos                     controllers.Videos.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
 
 # Add
 GET     /matches/new               controllers.Matches.create()
@@ -48,6 +50,9 @@ POST    /games                   controllers.Games.save()
 GET     /users/new               controllers.Users.create()
 POST    /users                   controllers.Users.save()
 
+GET     /videos/new               controllers.Videos.create()
+POST    /videos                   controllers.Videos.save()
+
 # Edit
 GET     /matches/:id              controllers.Matches.edit(id:Long)
 POST    /matches/:id              controllers.Matches.update(id:Long)
@@ -70,6 +75,9 @@ POST    /games/:id              controllers.Games.update(id:Long)
 GET     /users/:id              controllers.Users.edit(id:Long)
 POST    /users/:id              controllers.Users.update(id:Long)
 
+GET     /videos/:id              controllers.Videos.edit(id:Long)
+POST    /videos/:id              controllers.Videos.update(id:Long)
+
 # Delete
 POST    /matches/:id/delete           controllers.Matches.delete(id:Long)
 POST    /teams/:id/delete           controllers.Teams.delete(id:Long)
@@ -78,6 +86,7 @@ POST    /players/:id/delete       controllers.Players.delete(id:Long)
 POST    /seasons/:id/delete       controllers.Seasons.delete(id:Long)
 POST    /games/:id/delete           controllers.Games.delete(id:Long)
 POST    /users/:id/delete           controllers.Users.delete(id:Long)
+POST    /videos/:id/delete           controllers.Videos.delete(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

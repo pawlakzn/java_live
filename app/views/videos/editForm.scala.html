@@ -1,0 +1,42 @@
+@(id: Long, videoForm: Form[Video])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) }
+
+@main {
+
+<h1>Edytuj wideo</h1>
+
+@form(routes.Videos.update(id)) {
+
+<fieldset>
+
+    @inputText(videoForm("name"), '_label -> "Nazwa")
+
+    @select(
+    videoForm("vmatch.id"),
+    options(Match.options),
+    '_label -> "Mecz", '_default -> "-- Wybierz mecz --",
+    '_showConstraints -> false
+    )
+
+    @textarea(videoForm("path"), '_label -> "Ścieżka")
+
+</fieldset>
+
+<div class="actions">
+    <input type="submit" value="Edytuj wideo" class="btn primary"> or
+    <a href="@routes.Videos.list()" class="btn">Anuluj</a>
+</div>
+
+}
+
+<iframe class="videoItem" title="YouTube video player" width="640" height="360" src=@videoForm("path").value frameborder="0" allowfullscreen style="max-width:100%;"></iframe>
+
+
+@form(routes.Videos.delete(id), 'class -> "topRight") {
+<input type="submit" value="Usuń wideo" class="btn danger">
+}
+
+}

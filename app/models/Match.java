@@ -9,7 +9,11 @@ import play.data.validation.*;
 import play.data.validation.Constraints.*;
 
 import com.avaje.ebean.*;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Entity
 public class Match extends Model {
@@ -84,6 +88,15 @@ public class Match extends Model {
                         .findPagingList(pageSize)
                         .setFetchAhead(false)
                         .getPage(page);
+    }
+
+    public static Map<String,String> options() {
+        LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
+        for(Match c: Match.find.orderBy("team1.name").findList()) {
+            String y = c.team1.name +" - " + c.team2.name;
+            options.put(c.id.toString(), y);
+        }
+        return options;
     }
 
 }
