@@ -24,10 +24,14 @@ public class Matches extends Controller {
     }
 
     public static Result list(int page, String sortBy, String order, String filter) {
+        User user = User.findByLogin(session("login"));
+        if (user == null){
+            user = new User();
+        }
         return ok(
                 views.html.matches.list.render(
                         Match.page(page, 10, sortBy, order, filter),
-                        sortBy, order, filter
+                        sortBy, order, filter, user
                 )
         );
     }
@@ -88,6 +92,14 @@ public class Matches extends Controller {
         return GO_HOME;
     }
 
+    public static Result live(Long id) {
+        Form<Match> matchForm = form(Match.class).fill(
+                Match.find.byId(id)
+        );
+        return ok(
+                views.html.matches.live.render(matchForm)
+        );
+    }
 
 }
             

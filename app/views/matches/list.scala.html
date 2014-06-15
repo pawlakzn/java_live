@@ -1,4 +1,4 @@
-@(currentPage: com.avaje.ebean.Page[Match], currentSortBy: String, currentOrder: String, currentFilter: String)
+@(currentPage: com.avaje.ebean.Page[Match], currentSortBy: String, currentOrder: String, currentFilter: String, loggeduser: User)
 
 @****************************************
 * Helper generating navigation links    *
@@ -66,13 +66,14 @@ routes.Matches.list(newPage, sortBy, order, currentFilter)
         <th>Rozgrywki</th>
         <th>Data</th>
         <th>Wynik</th>
+        <th>Akcja</th>
     </tr>
     </thead>
     <tbody>
 
     @for(matches <- currentPage.getList) {
     <tr>
-        <td><a href="@routes.Matches.edit(matches.id)">@matches.team1.name</a></td>
+        <td>@matches.team1.name</td>
         <td>@matches.team2.name</td>
         <td>
             @if(matches.game.name == null) {
@@ -93,6 +94,12 @@ routes.Matches.list(newPage, sortBy, order, currentFilter)
             <em>-</em>
             } else {
             @matches.score1:@matches.score2 (@matches.score1:@matches.score2)
+            }
+        </td>
+        <td>
+            <a class="btn danger small" id="add" href="@routes.Matches.live(matches.id)">Zobacz</a>
+            @if(loggeduser.status > 0){
+            <a class="btn info small" id="add" href="@routes.Matches.edit(matches.id)">Edytuj</a>
             }
         </td>
     </tr>

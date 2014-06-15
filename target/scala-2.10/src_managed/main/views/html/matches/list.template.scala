@@ -20,10 +20,10 @@ import play.api.data.Field
 import play.mvc.Http.Context.Implicit._
 import views.html._
 /**/
-object list extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template4[com.avaje.ebean.Page[Match],String,String,String,play.api.templates.HtmlFormat.Appendable] {
+object list extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template5[com.avaje.ebean.Page[Match],String,String,String,User,play.api.templates.HtmlFormat.Appendable] {
 
     /**/
-    def apply/*1.2*/(currentPage: com.avaje.ebean.Page[Match], currentSortBy: String, currentOrder: String, currentFilter: String):play.api.templates.HtmlFormat.Appendable = {
+    def apply/*1.2*/(currentPage: com.avaje.ebean.Page[Match], currentSortBy: String, currentOrder: String, currentFilter: String, loggeduser: User):play.api.templates.HtmlFormat.Appendable = {
         _display_ {
 def /*32.2*/header/*32.8*/(key:String, title:String):play.api.templates.HtmlFormat.Appendable = {_display_(
 
@@ -53,7 +53,7 @@ order = "asc"
 routes.Matches.list(newPage, sortBy, order, currentFilter)
 
 }};
-Seq[Any](format.raw/*1.112*/("""
+Seq[Any](format.raw/*1.130*/("""
 
 """),format.raw/*5.42*/("""
 """),format.raw/*27.2*/("""
@@ -92,88 +92,95 @@ Seq[Any](format.raw/*1.112*/("""
         <th>Rozgrywki</th>
         <th>Data</th>
         <th>Wynik</th>
+        <th>Akcja</th>
     </tr>
     </thead>
     <tbody>
 
-    """),_display_(Seq[Any](/*73.6*/for(matches <- currentPage.getList) yield /*73.41*/ {_display_(Seq[Any](format.raw/*73.43*/("""
+    """),_display_(Seq[Any](/*74.6*/for(matches <- currentPage.getList) yield /*74.41*/ {_display_(Seq[Any](format.raw/*74.43*/("""
     <tr>
-        <td><a href=""""),_display_(Seq[Any](/*75.23*/routes/*75.29*/.Matches.edit(matches.id))),format.raw/*75.54*/("""">"""),_display_(Seq[Any](/*75.57*/matches/*75.64*/.team1.name)),format.raw/*75.75*/("""</a></td>
-        <td>"""),_display_(Seq[Any](/*76.14*/matches/*76.21*/.team2.name)),format.raw/*76.32*/("""</td>
+        <td>"""),_display_(Seq[Any](/*76.14*/matches/*76.21*/.team1.name)),format.raw/*76.32*/("""</td>
+        <td>"""),_display_(Seq[Any](/*77.14*/matches/*77.21*/.team2.name)),format.raw/*77.32*/("""</td>
         <td>
-            """),_display_(Seq[Any](/*78.14*/if(matches.game.name == null)/*78.43*/ {_display_(Seq[Any](format.raw/*78.45*/("""
+            """),_display_(Seq[Any](/*79.14*/if(matches.game.name == null)/*79.43*/ {_display_(Seq[Any](format.raw/*79.45*/("""
             <em>-</em>
-            """)))}/*80.15*/else/*80.20*/{_display_(Seq[Any](format.raw/*80.21*/("""
-            """),_display_(Seq[Any](/*81.14*/matches/*81.21*/.game.name)),format.raw/*81.31*/("""
-            """)))})),format.raw/*82.14*/("""
+            """)))}/*81.15*/else/*81.20*/{_display_(Seq[Any](format.raw/*81.21*/("""
+            """),_display_(Seq[Any](/*82.14*/matches/*82.21*/.game.name)),format.raw/*82.31*/("""
+            """)))})),format.raw/*83.14*/("""
         </td>
         <td>
-            """),_display_(Seq[Any](/*85.14*/if(matches.match_date == null)/*85.44*/ {_display_(Seq[Any](format.raw/*85.46*/("""
+            """),_display_(Seq[Any](/*86.14*/if(matches.match_date == null)/*86.44*/ {_display_(Seq[Any](format.raw/*86.46*/("""
             <em>-</em>
-            """)))}/*87.15*/else/*87.20*/{_display_(Seq[Any](format.raw/*87.21*/("""
-            """),_display_(Seq[Any](/*88.14*/matches/*88.21*/.match_date.format("dd-MM-yyyy kk:mm"))),format.raw/*88.59*/("""
-            """)))})),format.raw/*89.14*/("""
+            """)))}/*88.15*/else/*88.20*/{_display_(Seq[Any](format.raw/*88.21*/("""
+            """),_display_(Seq[Any](/*89.14*/matches/*89.21*/.match_date.format("dd-MM-yyyy kk:mm"))),format.raw/*89.59*/("""
+            """)))})),format.raw/*90.14*/("""
         </td>
         <td>
-            """),_display_(Seq[Any](/*92.14*/if(matches.score1 == null || matches.score2 == null)/*92.66*/ {_display_(Seq[Any](format.raw/*92.68*/("""
+            """),_display_(Seq[Any](/*93.14*/if(matches.score1 == null || matches.score2 == null)/*93.66*/ {_display_(Seq[Any](format.raw/*93.68*/("""
             <em>-</em>
-            """)))}/*94.15*/else/*94.20*/{_display_(Seq[Any](format.raw/*94.21*/("""
-            """),_display_(Seq[Any](/*95.14*/matches/*95.21*/.score1)),format.raw/*95.28*/(""":"""),_display_(Seq[Any](/*95.30*/matches/*95.37*/.score2)),format.raw/*95.44*/(""" ("""),_display_(Seq[Any](/*95.47*/matches/*95.54*/.score1)),format.raw/*95.61*/(""":"""),_display_(Seq[Any](/*95.63*/matches/*95.70*/.score2)),format.raw/*95.77*/(""")
-            """)))})),format.raw/*96.14*/("""
+            """)))}/*95.15*/else/*95.20*/{_display_(Seq[Any](format.raw/*95.21*/("""
+            """),_display_(Seq[Any](/*96.14*/matches/*96.21*/.score1)),format.raw/*96.28*/(""":"""),_display_(Seq[Any](/*96.30*/matches/*96.37*/.score2)),format.raw/*96.44*/(""" ("""),_display_(Seq[Any](/*96.47*/matches/*96.54*/.score1)),format.raw/*96.61*/(""":"""),_display_(Seq[Any](/*96.63*/matches/*96.70*/.score2)),format.raw/*96.77*/(""")
+            """)))})),format.raw/*97.14*/("""
+        </td>
+        <td>
+            <a class="btn danger small" id="add" href=""""),_display_(Seq[Any](/*100.57*/routes/*100.63*/.Matches.live(matches.id))),format.raw/*100.88*/("""">Zobacz</a>
+            """),_display_(Seq[Any](/*101.14*/if(loggeduser.status > 0)/*101.39*/{_display_(Seq[Any](format.raw/*101.40*/("""
+            <a class="btn info small" id="add" href=""""),_display_(Seq[Any](/*102.55*/routes/*102.61*/.Matches.edit(matches.id))),format.raw/*102.86*/("""">Edytuj</a>
+            """)))})),format.raw/*103.14*/("""
         </td>
     </tr>
-    """)))})),format.raw/*99.6*/("""
+    """)))})),format.raw/*106.6*/("""
 
     </tbody>
 </table>
 
 <div id="pagination" class="pagination">
     <ul>
-        """),_display_(Seq[Any](/*106.10*/if(currentPage.hasPrev)/*106.33*/ {_display_(Seq[Any](format.raw/*106.35*/("""
+        """),_display_(Seq[Any](/*113.10*/if(currentPage.hasPrev)/*113.33*/ {_display_(Seq[Any](format.raw/*113.35*/("""
         <li class="prev">
-            <a href=""""),_display_(Seq[Any](/*108.23*/link(currentPage.getPageIndex - 1, null))),format.raw/*108.63*/("""">&larr; Poprzedni</a>
+            <a href=""""),_display_(Seq[Any](/*115.23*/link(currentPage.getPageIndex - 1, null))),format.raw/*115.63*/("""">&larr; Poprzedni</a>
         </li>
-        """)))}/*110.11*/else/*110.16*/{_display_(Seq[Any](format.raw/*110.17*/("""
+        """)))}/*117.11*/else/*117.16*/{_display_(Seq[Any](format.raw/*117.17*/("""
         <li class="prev disabled">
             <a>&larr; Poprzedni</a>
         </li>
-        """)))})),format.raw/*114.10*/("""
+        """)))})),format.raw/*121.10*/("""
         <li class="current">
-            <a>Wyświetla """),_display_(Seq[Any](/*116.27*/currentPage/*116.38*/.getDisplayXtoYofZ(" do "," z "))),format.raw/*116.70*/("""</a>
+            <a>Wyświetla """),_display_(Seq[Any](/*123.27*/currentPage/*123.38*/.getDisplayXtoYofZ(" do "," z "))),format.raw/*123.70*/("""</a>
         </li>
-        """),_display_(Seq[Any](/*118.10*/if(currentPage.hasNext)/*118.33*/ {_display_(Seq[Any](format.raw/*118.35*/("""
+        """),_display_(Seq[Any](/*125.10*/if(currentPage.hasNext)/*125.33*/ {_display_(Seq[Any](format.raw/*125.35*/("""
         <li class="next">
-            <a href=""""),_display_(Seq[Any](/*120.23*/link(currentPage.getPageIndex + 1, null))),format.raw/*120.63*/("""">Następny &rarr;</a>
+            <a href=""""),_display_(Seq[Any](/*127.23*/link(currentPage.getPageIndex + 1, null))),format.raw/*127.63*/("""">Następny &rarr;</a>
         </li>
-        """)))}/*122.11*/else/*122.16*/{_display_(Seq[Any](format.raw/*122.17*/("""
+        """)))}/*129.11*/else/*129.16*/{_display_(Seq[Any](format.raw/*129.17*/("""
         <li class="next disabled">
             <a>Następny &rarr;</a>
         </li>
-        """)))})),format.raw/*126.10*/("""
+        """)))})),format.raw/*133.10*/("""
     </ul>
 </div>
 
-""")))})),format.raw/*130.2*/("""
+""")))})),format.raw/*137.2*/("""
 
-""")))})),format.raw/*132.2*/("""
+""")))})),format.raw/*139.2*/("""
 
             """))}
     }
     
-    def render(currentPage:com.avaje.ebean.Page[Match],currentSortBy:String,currentOrder:String,currentFilter:String): play.api.templates.HtmlFormat.Appendable = apply(currentPage,currentSortBy,currentOrder,currentFilter)
+    def render(currentPage:com.avaje.ebean.Page[Match],currentSortBy:String,currentOrder:String,currentFilter:String,loggeduser:User): play.api.templates.HtmlFormat.Appendable = apply(currentPage,currentSortBy,currentOrder,currentFilter,loggeduser)
     
-    def f:((com.avaje.ebean.Page[Match],String,String,String) => play.api.templates.HtmlFormat.Appendable) = (currentPage,currentSortBy,currentOrder,currentFilter) => apply(currentPage,currentSortBy,currentOrder,currentFilter)
+    def f:((com.avaje.ebean.Page[Match],String,String,String,User) => play.api.templates.HtmlFormat.Appendable) = (currentPage,currentSortBy,currentOrder,currentFilter,loggeduser) => apply(currentPage,currentSortBy,currentOrder,currentFilter,loggeduser)
     
     def ref: this.type = this
 
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 15 13:44:23 CEST 2014
+                    DATE: Sun Jun 15 15:02:23 CEST 2014
                     SOURCE: D:/Pawlak/Play/live/app/views/matches/list.scala.html
-                    HASH: b592ac8d7cc0dfd6d37486e3b5aa972eac280568
-                    MATRIX: 823->1|1011->732|1025->738|1136->768|1186->782|1198->785|1237->802|1282->811|1316->837|1404->901|1454->915|1488->927|1527->930|1554->935|1590->245|1601->249|1998->111|2029->242|2058->615|2090->729|2119->949|2159->954|2171->958|2210->960|2270->984|2352->1044|2397->1054|2438->1086|2478->1088|2583->1157|2597->1162|2634->1177|2676->1188|2757->1233|2772->1239|2811->1256|2926->1336|2972->1373|3012->1375|3106->1452|3118->1457|3156->1458|3269->1535|3319->1563|3366->1574|3411->1597|3568->1719|3619->1754|3659->1756|3729->1790|3744->1796|3791->1821|3830->1824|3846->1831|3879->1842|3939->1866|3955->1873|3988->1884|4058->1918|4096->1947|4136->1949|4194->1989|4207->1994|4246->1995|4297->2010|4313->2017|4345->2027|4392->2042|4472->2086|4511->2116|4551->2118|4609->2158|4622->2163|4661->2164|4712->2179|4728->2186|4788->2224|4835->2239|4915->2283|4976->2335|5016->2337|5074->2377|5087->2382|5126->2383|5177->2398|5193->2405|5222->2412|5260->2414|5276->2421|5305->2428|5344->2431|5360->2438|5389->2445|5427->2447|5443->2454|5472->2461|5520->2477|5584->2510|5712->2601|5745->2624|5786->2626|5874->2677|5937->2717|6005->2766|6019->2771|6059->2772|6191->2871|6286->2929|6307->2940|6362->2972|6429->3002|6462->3025|6503->3027|6591->3078|6654->3118|6721->3166|6735->3171|6775->3172|6906->3270|6962->3294|6999->3299
-                    LINES: 26->1|28->32|28->32|30->32|31->33|31->33|31->33|31->33|31->33|31->33|32->34|32->34|32->34|32->34|34->6|34->6|56->1|58->5|59->27|61->31|62->36|64->38|64->38|64->38|66->40|66->40|68->42|68->42|68->42|70->44|70->44|70->44|72->46|75->49|75->49|75->49|79->53|79->53|79->53|85->59|85->59|85->59|90->64|90->64|91->65|91->65|99->73|99->73|99->73|101->75|101->75|101->75|101->75|101->75|101->75|102->76|102->76|102->76|104->78|104->78|104->78|106->80|106->80|106->80|107->81|107->81|107->81|108->82|111->85|111->85|111->85|113->87|113->87|113->87|114->88|114->88|114->88|115->89|118->92|118->92|118->92|120->94|120->94|120->94|121->95|121->95|121->95|121->95|121->95|121->95|121->95|121->95|121->95|121->95|121->95|121->95|122->96|125->99|132->106|132->106|132->106|134->108|134->108|136->110|136->110|136->110|140->114|142->116|142->116|142->116|144->118|144->118|144->118|146->120|146->120|148->122|148->122|148->122|152->126|156->130|158->132
+                    HASH: e8400f0f07c3a1373729a19ef139db88deefed8d
+                    MATRIX: 828->1|1034->750|1048->756|1159->786|1209->800|1221->803|1260->820|1305->829|1339->855|1427->919|1477->933|1511->945|1550->948|1577->953|1613->263|1624->267|2021->129|2052->260|2081->633|2113->747|2142->967|2182->972|2194->976|2233->978|2293->1002|2375->1062|2420->1072|2461->1104|2501->1106|2606->1175|2620->1180|2657->1195|2699->1206|2780->1251|2795->1257|2834->1274|2949->1354|2995->1391|3035->1393|3129->1470|3141->1475|3179->1476|3292->1553|3342->1581|3389->1592|3434->1615|3615->1761|3666->1796|3706->1798|3767->1823|3783->1830|3816->1841|3872->1861|3888->1868|3921->1879|3991->1913|4029->1942|4069->1944|4127->1984|4140->1989|4179->1990|4230->2005|4246->2012|4278->2022|4325->2037|4405->2081|4444->2111|4484->2113|4542->2153|4555->2158|4594->2159|4645->2174|4661->2181|4721->2219|4768->2234|4848->2278|4909->2330|4949->2332|5007->2372|5020->2377|5059->2378|5110->2393|5126->2400|5155->2407|5193->2409|5209->2416|5238->2423|5277->2426|5293->2433|5322->2440|5360->2442|5376->2449|5405->2456|5453->2472|5577->2559|5593->2565|5641->2590|5705->2617|5740->2642|5780->2643|5873->2699|5889->2705|5937->2730|5997->2757|6062->2790|6190->2881|6223->2904|6264->2906|6352->2957|6415->2997|6483->3046|6497->3051|6537->3052|6669->3151|6764->3209|6785->3220|6840->3252|6907->3282|6940->3305|6981->3307|7069->3358|7132->3398|7199->3446|7213->3451|7253->3452|7384->3550|7440->3574|7477->3579
+                    LINES: 26->1|28->32|28->32|30->32|31->33|31->33|31->33|31->33|31->33|31->33|32->34|32->34|32->34|32->34|34->6|34->6|56->1|58->5|59->27|61->31|62->36|64->38|64->38|64->38|66->40|66->40|68->42|68->42|68->42|70->44|70->44|70->44|72->46|75->49|75->49|75->49|79->53|79->53|79->53|85->59|85->59|85->59|90->64|90->64|91->65|91->65|100->74|100->74|100->74|102->76|102->76|102->76|103->77|103->77|103->77|105->79|105->79|105->79|107->81|107->81|107->81|108->82|108->82|108->82|109->83|112->86|112->86|112->86|114->88|114->88|114->88|115->89|115->89|115->89|116->90|119->93|119->93|119->93|121->95|121->95|121->95|122->96|122->96|122->96|122->96|122->96|122->96|122->96|122->96|122->96|122->96|122->96|122->96|123->97|126->100|126->100|126->100|127->101|127->101|127->101|128->102|128->102|128->102|129->103|132->106|139->113|139->113|139->113|141->115|141->115|143->117|143->117|143->117|147->121|149->123|149->123|149->123|151->125|151->125|151->125|153->127|153->127|155->129|155->129|155->129|159->133|163->137|165->139
                     -- GENERATED --
                 */
             

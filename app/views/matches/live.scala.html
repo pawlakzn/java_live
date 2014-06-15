@@ -1,0 +1,98 @@
+@(matchForm: Form[Match])
+
+<html>
+<head>
+    <title>Relacje LIVE</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/live.css")">
+
+</head>
+<body>
+
+<div id="header">
+    <table class="headerPanel" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="sideColumn">&nbsp;</td>
+            <td class="centralColumn" valign="top"><a href="@routes.Matches.index()">Lista meczów</a></td>
+            <td class="sideColumn">&nbsp;</td>
+        </tr>
+    </table>
+</div>
+<div id="scoreBoard">
+    <table class="boardTable" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="emblemColumn" valign="bottom"><img src="@routes.Assets.at(matchForm("team1.crest").value)"/></td>
+            <td class="boardColumn" valign="top">
+                <div class="matchDate">Rozpoczęcie meczu: <span id="matchStartDate">@matchForm("match_date").value.format("dd-MM-yyyy kk:mm")</span></div>
+                <table class="scoreTable" width="90%">
+                    <tr>
+                        <td class="scoreTeam" id="scoreTeamHost">@matchForm("team1.name").value</td>
+                        <td class="scoreGoals">
+                            <span id="hostGoalsFull">@matchForm("score1").value</span>:<span id="guestGoalsFull">@matchForm("score2").value</span>
+                            <div id="halfGoals" class="halfGoals">(<span id="hostGoalsHalf">@matchForm("score1").value</span>:<span id="guestGoalsHalf">@matchForm("score2_half").value</span>)</div>
+                        </td>
+                        <td class="scoreTeam" id="scoreTeamGuest">@matchForm("team2.name").value</td>
+                    </tr>
+                </table>
+                <div class="matchTime" id="matchTime">
+                 @matchForm("status").value.toString() match{
+                    case "0" => {Mecz się jeszcze nie rozpoczął}
+                    case "1" => {Trwa 1. połowa}
+                    case "2" => {Przerwa}
+                    case "3" => {Trwa 2. połowa}
+                    case "4" => {Trwa dogrywka}
+                    case "5" => {Rzuty karne}
+                    case "6" => {Koniec meczu}
+                 }
+                </div>
+            </td>
+            <td class="emblemColumn" valign="bottom"><img src="@routes.Assets.at(matchForm("team2.crest").value)"/></td>
+        </tr>
+    </table>
+</div>
+<div id="contentWrapper">
+    <div class="leftCol">
+        <div class="colHeader"><img src="@routes.Assets.at("images/col_header_arrow.png")" width="20" height="15" /> Relacja LIVE: &nbsp;<span id="headerTeamNames">-</span></div>
+        <div class="colContent">
+            <div class="playersPanel">
+                <div class="topPart"></div>
+                <div class="middlePart">
+                    <table id="playersTable">
+                        <tr>
+                            <td colspan="2">
+                                <table class="matchDetails" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td ><img src="@routes.Assets.at("images/live/referee.png")" /> Sędzia: <strong id="matchReferee">@matchForm("referee.firstname").value @matchForm("referee.lastname").value</strong></td>
+                                        <td  align="center"><img src="@routes.Assets.at("images/live/spectators.png")" /> Widzów: <strong id="matchSpectators">@matchForm("viewers").value</strong></td>
+                                        <td  align="right"><img src="@routes.Assets.at("images/live/weather.png")" /> Pogoda: <strong id="matchWeather">@matchForm("weather").value</strong></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="bottomPart"></div>
+            </div>
+
+            <div class="liveHeader">Minuta po minucie:</div>
+            <div id="eventList"></div>
+        </div>
+    </div>
+    <div class="rightCol">
+        <div class="panelHeader">Zdjęcia</div>
+        <div class="panelContent">
+            <div class="moreItems"><a href="/">zobacz wszystkie <img src="@routes.Assets.at("images/list_arrow.png")" border="0" /></a></div>
+        </div>
+        <div class="panelHeader">Wideo</div>
+        <div class="panelContent">
+            <iframe class="videoItem" title="YouTube video player" width="252" height="160" src="http://www.youtube.com/embed/utXXBcW55Dg?rel=0" frameborder="0" allowfullscreen></iframe>
+            <iframe class="videoItem" title="YouTube video player" width="252" height="160" src="http://www.youtube.com/embed/36AFnuBhRy8?rel=0" frameborder="0" allowfullscreen></iframe>
+            <div class="moreItems"><a href="/">zobacz wszystkie <img src="@routes.Assets.at("images/list_arrow.png")" border="0" /></a></div>
+        </div>
+    </div>
+
+</body>
+</html>
+    
+
+

@@ -1,0 +1,63 @@
+body { margin: 0px; background: url(images/live_bg.png) repeat; color: #ffffff; }
+body, input, textarea, select, button { font: normal 11px Tahoma, Arial, Helvetica, Sans-serif; }
+
+a { color: #ffffff; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus { outline: none; }
+
+#header .headerBar { background-color: #f8f2d3; height: 22px; color: #444141; line-height: 22px; text-align: center; }
+#header .headerBar a { color: #820000; font-weight: bold; }
+#header .headerPanel { height: 77px; }
+#header .headerPanel .centralColumn { width: 459px; background: url(images/live_header_bg.png) no-repeat; text-align: center; font-size: 16px; padding-top: 19px; }
+#header .headerPanel .centralColumn img { vertical-align: middle; }
+#header .headerPanel .centralColumn a:hover { text-decoration: none; }
+#header .headerPanel .sideColumn { background: url(images/live_header_line_bg.png) repeat-x; }
+
+#scoreBoard { width: 723px; height: 165px; margin: 15px auto; background: url(images/live_score_shadow.png) 0 90px no-repeat; }
+#scoreBoard .boardTable { margin: 0 auto; }
+#scoreBoard .boardTable .emblemColumn { width: 165px; padding: 0 5px 20px 5px; text-align: center; }
+#scoreBoard .boardTable .boardColumn { width: 356px; height: 156px; padding-top: 10px; background: url(images/live_score_bg.png) no-repeat; text-align: center; }
+#scoreBoard .boardTable .boardColumn .matchDate { color: #adadad; font-size: 14px; }
+#scoreBoard .boardTable .boardColumn .matchDate span { color: #fff600; }
+#scoreBoard .boardTable .boardColumn .matchTime { font-size: 14px; }
+#scoreBoard .boardTable .boardColumn .matchTime img { vertical-align: -1px; }
+#scoreBoard .boardTable .boardColumn .scoreTable { margin: 8px auto; }
+#scoreBoard .boardTable .boardColumn .scoreTable .scoreTeam { width: 90px; height: 75px; background: #000000; font-size: 14px; font-weight: bold; text-align:center;}
+#scoreBoard .boardTable .boardColumn .scoreTable .scoreGoals { font-size: 24px; font-weight: bold; text-align:center;}
+#scoreBoard .boardTable .boardColumn .scoreTable .scoreGoals span { color: #fff600; }
+#scoreBoard .boardTable .boardColumn .scoreTable .scoreGoals .halfGoals { font-size: 18px; display: visibility; text-align:center;}
+#matchTimer { font-weight: bold; color: #ffffff; }
+
+#contentWrapper { height: 500px; background-color:darkgreen; width: 980px; margin: 0 auto; }
+#contentWrapper .leftCol { float: left; width: 700px; margin-left: 4px; }
+#contentWrapper .leftCol .colHeader { height: 25px; background: url(images/live_bar_bg.png) no-repeat; line-height: 25px; font-weight: bold; text-transform: uppercase; }
+#contentWrapper .leftCol .colHeader img { vertical-align: -3px; }
+#contentWrapper .leftCol .colContent { padding: 5px 7px 5px 7px; margin-bottom: 4px; }
+#contentWrapper .leftCol .colContent .playersPanel { width: 600px; margin: 3px auto; }
+#contentWrapper .leftCol .colContent .playersPanel .topPart { height: 7px; background: url(images/live_players_top_bg.png) no-repeat; }
+#contentWrapper .leftCol .colContent .playersPanel .middlePart { background-color: #ffffff; color: #000000; min-height: 215px; line-height: 16px; }
+#contentWrapper .leftCol .colContent .playersPanel .middlePart #playersTable { margin: 0 auto; color: black;}
+#contentWrapper .leftCol .colContent .playersPanel .middlePart table td { padding: 0 7px 0 7px; }
+#contentWrapper .leftCol .colContent .playersPanel .middlePart ul { margin: 7px 0 10px 0; padding: 0px; list-style: none; }
+#contentWrapper .leftCol .colContent .playersPanel .middlePart img { vertical-align: text-top; }
+#contentWrapper .leftCol .colContent .playersPanel .middlePart .rowHeader { font-size: 12px; font-weight: bold; }
+#contentWrapper .leftCol .colContent .playersPanel .middlePart .rowHeader11 { font-weight: bold; margin-bottom: 3px; }
+#contentWrapper .leftCol .colContent .playersPanel .middlePart .matchDetails { margin: 10px auto 0 auto; color: black; font-size: 10px;}
+#contentWrapper .leftCol .colContent .playersPanel .bottomPart { height: 7px; background: url(images/live_players_bottom_bg.png) no-repeat; }
+#contentWrapper .leftCol .colContent .liveHeader { color: #fff600; font-size: 13px; font-weight: bold; margin: 10px 0 5px 0; }
+#contentWrapper .leftCol .colContent .liveEvent { padding: 0 5px; line-height: 21px; border-top: 1px solid #295b06; background: url(images/live_event_bg.png) repeat; }
+#contentWrapper .leftCol .colContent .liveEvent .eventTime { padding: 2px 3px; background-color: #ffffff; font-size: 11px; font-weight: bold; color: #000000; }
+#contentWrapper .leftCol .colContent .liveEvent .eventTime img { vertical-align: text-top; }
+#contentWrapper .leftCol .colContent #liveChat { display: none; }
+#contentWrapper .leftCol .colContent #enableChatButton { background: url(images/button_green_85_bg.png) no-repeat; width: 85px; height: 21px; border: 0px; color: #fff600; }
+#contentWrapper .rightCol { float: right; width: 266px; margin-right: 4px; }
+#contentWrapper .rightCol .panelHeader { height: 30px; padding-left: 10px; background: url(images/panel_header_bg.png) no-repeat; line-height: 30px; font-size: 14px; font-weight: bold; }
+#contentWrapper .rightCol .panelContent { padding-top: 6px; line-height: 18px; text-align: center; }
+#contentWrapper .rightCol .panelContent .videoItem, #contentWrapper .rightCol .panelContent .photoItem { width: 252px; padding: 1px; margin: 0 auto 6px auto; background: #000000; }
+#contentWrapper .rightCol .panelContent .photoItem img { }
+#contentWrapper .rightCol .panelContent .moreItems { margin: 0 6px 5px 0; text-align: right; }
+#contentWrapper .rightCol .panelContent .moreItems a { color: #fff600; }
+
+#footer { clear: both; text-align: center; color: #fff600; background-color: #051a09; line-height: 25px; background: url(images/partners_bg.png) repeat-x; color: #d40000; }
+
+div.clear { clear: both; }

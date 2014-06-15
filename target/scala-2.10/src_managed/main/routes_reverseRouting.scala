@@ -1,6 +1,6 @@
 // @SOURCE:D:/Pawlak/Play/live/conf/routes
-// @HASH:c4059e541998597b2b226db48e967f856adcbcb8
-// @DATE:Sun Jun 15 11:59:39 CEST 2014
+// @HASH:68e666b07a39f945bbad014a8ebb6ed93e91a1c0
+// @DATE:Sun Jun 15 15:03:13 CEST 2014
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,6 +13,7 @@ import play.libs.F
 import Router.queryString
 
 
+// @LINE:90
 // @LINE:89
 // @LINE:87
 // @LINE:86
@@ -68,7 +69,6 @@ import Router.queryString
 // @LINE:10
 // @LINE:9
 // @LINE:8
-// @LINE:7
 // @LINE:6
 package controllers {
 
@@ -147,13 +147,13 @@ def active(id:Long): Call = {
 }
                           
 
+// @LINE:90
 // @LINE:74
 // @LINE:53
 // @LINE:52
 // @LINE:31
 // @LINE:30
 // @LINE:21
-// @LINE:7
 // @LINE:6
 class ReverseMatches {
     
@@ -161,6 +161,12 @@ class ReverseMatches {
 // @LINE:74
 def delete(id:Long): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "matches/" + implicitly[PathBindable[Long]].unbind("id", id) + "/delete")
+}
+                                                
+
+// @LINE:90
+def live(id:Long): Call = {
+   Call("GET", _prefix + { _defaultPrefix } + "matches/live/" + implicitly[PathBindable[Long]].unbind("id", id))
 }
                                                 
 
@@ -194,17 +200,9 @@ def save(): Call = {
 }
                                                 
 
-// @LINE:7
 // @LINE:6
 def index(): Call = {
-   () match {
-// @LINE:6
-case () if true => Call("GET", _prefix)
-                                                        
-// @LINE:7
-case () if true => Call("GET", _prefix + { _defaultPrefix } + "matches/index")
-                                                        
-   }
+   Call("GET", _prefix)
 }
                                                 
     
@@ -530,6 +528,7 @@ def index(): Call = {
                   
 
 
+// @LINE:90
 // @LINE:89
 // @LINE:87
 // @LINE:86
@@ -585,7 +584,6 @@ def index(): Call = {
 // @LINE:10
 // @LINE:9
 // @LINE:8
-// @LINE:7
 // @LINE:6
 package controllers.javascript {
 
@@ -709,13 +707,13 @@ def active : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:90
 // @LINE:74
 // @LINE:53
 // @LINE:52
 // @LINE:31
 // @LINE:30
 // @LINE:21
-// @LINE:7
 // @LINE:6
 class ReverseMatches {
     
@@ -726,6 +724,17 @@ def delete : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(id) {
       return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "matches/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id) + "/delete"})
+      }
+   """
+)
+                        
+
+// @LINE:90
+def live : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Matches.live",
+   """
+      function(id) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "matches/live/" + (""" + implicitly[PathBindable[Long]].javascriptUnbind + """)("id", id)})
       }
    """
 )
@@ -786,18 +795,12 @@ def save : JavascriptReverseRoute = JavascriptReverseRoute(
 )
                         
 
-// @LINE:7
 // @LINE:6
 def index : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Matches.index",
    """
       function() {
-      if (true) {
       return _wA({method:"GET", url:"""" + _prefix + """"})
-      }
-      if (true) {
-      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "matches/index"})
-      }
       }
    """
 )
@@ -1325,6 +1328,7 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
+// @LINE:90
 // @LINE:89
 // @LINE:87
 // @LINE:86
@@ -1380,7 +1384,6 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 // @LINE:10
 // @LINE:9
 // @LINE:8
-// @LINE:7
 // @LINE:6
 package controllers.ref {
 
@@ -1460,13 +1463,13 @@ def active(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
                           
 
+// @LINE:90
 // @LINE:74
 // @LINE:53
 // @LINE:52
 // @LINE:31
 // @LINE:30
 // @LINE:21
-// @LINE:7
 // @LINE:6
 class ReverseMatches {
     
@@ -1474,6 +1477,12 @@ class ReverseMatches {
 // @LINE:74
 def delete(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Matches.delete(id), HandlerDef(this, "controllers.Matches", "delete", Seq(classOf[Long]), "POST", """ Delete""", _prefix + """matches/$id<[^/]+>/delete""")
+)
+                      
+
+// @LINE:90
+def live(id:Long): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Matches.live(id), HandlerDef(this, "controllers.Matches", "live", Seq(classOf[Long]), "GET", """""", _prefix + """matches/live/$id<[^/]+>""")
 )
                       
 
@@ -1688,7 +1697,7 @@ def save(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 
 // @LINE:8
 def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Referees.index(), HandlerDef(this, "controllers.Referees", "index", Seq(), "GET", """""", _prefix + """referees/index""")
+   controllers.Referees.index(), HandlerDef(this, "controllers.Referees", "index", Seq(), "GET", """GET     /matches/index              controllers.Matches.index()""", _prefix + """referees/index""")
 )
                       
     

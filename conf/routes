@@ -4,7 +4,7 @@
 
 # Default path will just redirect to the list
 GET     /                           controllers.Matches.index()
-GET     /matches/index              controllers.Matches.index()
+#GET     /matches/index              controllers.Matches.index()
 GET     /referees/index             controllers.Referees.index()
 GET     /players/index              controllers.Players.index()
 GET     /seasons/index              controllers.Seasons.index()
@@ -87,3 +87,4 @@ POST     /teams/upload/              controllers.Teams.upload(id:Long)
 POST     /players/upload/             controllers.Players.upload(id:Long)
 
 GET    /users/active/:id              controllers.Users.active(id:Long)
+GET    /matches/live/:id              controllers.Matches.live(id:Long)
