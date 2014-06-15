@@ -79,6 +79,29 @@
         </div>
     </div>
     <div class="rightCol">
+        <div class="panelHeader">Statystyki</div>
+        <div class="panelContent" style="background-color:white;color:black;text-align:center;float:center;margin: 7 7 7 7;border-radius: 12px;font-size:12px;">
+            <strong>Bramki</strong><br>
+            @matchForm("statistics.goals1").value:@matchForm("statistics.goals2").value (@matchForm("statistics.goals1_half").value:@matchForm("statistics.goals2_half").value)<br>
+            <strong>Słupki/Poprzeczki:</strong><br>
+            @matchForm("statistics.goalpost1").value:@matchForm("statistics.goalpost2").value (@matchForm("statistics.goalpost1_half").value:@matchForm("statistics.goalpost2_half").value)<br>
+            <strong>Strzały celne:</strong><br>
+            @matchForm("statistics.attempts_target1").value:@matchForm("statistics.attempts_target2").value (@matchForm("statistics.attempts_target1_half").value:@matchForm("statistics.attempts_target2_half").value)<br>
+            <strong>Strzały niecelne:</strong><br>
+            @matchForm("statistics.attempts_offtarget1").value:@matchForm("statistics.attempts_offtarget2").value (@matchForm("statistics.attempts_offtarget1_half").value:@matchForm("statistics.attempts_offtarget2_half").value)<br>
+            <strong>Strzały zablokowane:</strong><br>
+            @matchForm("statistics.attempts_blocked1").value:@matchForm("statistics.attempts_blocked2").value (@matchForm("statistics.attempts_blocked1_half").value:@matchForm("statistics.attempts_blocked2_half").value)<br>
+            <strong>Rzuty rożne</strong>:<br>
+            @matchForm("statistics.corners1").value:@matchForm("statistics.corners2").value (@matchForm("statistics.corners1_half").value:@matchForm("statistics.corners2_half").value)<br>
+             <strong>Faule:</strong><br>
+            @matchForm("statistics.fouls1").value:@matchForm("statistics.fouls2").value (@matchForm("statistics.fouls1_half").value:@matchForm("statistics.fouls2_half").value)<br>
+            <strong>Spalone:</strong><br>
+            @matchForm("statistics.offsides1").value:@matchForm("statistics.offsides2").value (@matchForm("statistics.offsides1_half").value:@matchForm("statistics.offsides2_half").value)<br>
+            <strong>Żółte kartki:</strong><br>
+            @matchForm("statistics.yellow_cards1").value:@matchForm("statistics.yellow_cards2").value (@matchForm("statistics.yellow_cards1_half").value:@matchForm("statistics.yellow_cards2_half").value)<br>
+            <strong>Czerwone kartki:</strong><br>
+            @matchForm("statistics.red_cards1").value:@matchForm("statistics.red_cards2").value (@matchForm("statistics.red_cards1_half").value:@matchForm("statistics.red_cards2_half").value)<br>
+        </div>
         <div class="panelHeader">Zdjęcia</div>
         <div class="panelContent">
             <div class="moreItems"><a href="/">zobacz wszystkie <img src="@routes.Assets.at("images/list_arrow.png")" border="0" /></a></div>

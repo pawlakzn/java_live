@@ -28,7 +28,7 @@ a:focus { outline: none; }
 #scoreBoard .boardTable .boardColumn .scoreTable .scoreGoals .halfGoals { font-size: 18px; display: visibility; text-align:center;}
 #matchTimer { font-weight: bold; color: #ffffff; }
 
-#contentWrapper { height: 500px; background-color:darkgreen; width: 980px; margin: 0 auto; }
+#contentWrapper { height: 900px; background-color:darkgreen; width: 980px; margin: 0 auto; }
 #contentWrapper .leftCol { float: left; width: 700px; margin-left: 4px; }
 #contentWrapper .leftCol .colHeader { height: 25px; background: url(images/live_bar_bg.png) no-repeat; line-height: 25px; font-weight: bold; text-transform: uppercase; }
 #contentWrapper .leftCol .colHeader img { vertical-align: -3px; }

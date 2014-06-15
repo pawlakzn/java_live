@@ -37,24 +37,37 @@ public class Matches extends Controller {
     }
 
     public static Result edit(Long id) {
+        Match match = Match.find.byId(id);
+
         Form<Match> matchForm = form(Match.class).fill(
-                Match.find.byId(id)
+                match
         );
+
+        Form<Statistic> statisticForm = form(Statistic.class).fill(
+                Statistic.find.byId(match.statistics.id)
+        );
+
         return ok(
-                views.html.matches.editForm.render(id, matchForm)
+                views.html.matches.editForm.render(id, matchForm, statisticForm)
         );
     }
 
     public static Result update(Long id) {
         Form<Match> matchForm = form(Match.class).bindFromRequest();
-        if(matchForm.hasErrors()) {
-            return badRequest(views.html.matches.editForm.render(id, matchForm));
+        Form<Statistic> statisticForm = form(Statistic.class).bindFromRequest();
+
+        if(matchForm.hasErrors() || statisticForm.hasErrors()) {
+            return badRequest(views.html.matches.editForm.render(id, matchForm, statisticForm));
         }
+
         matchForm.get().update(id);
+        Match match = Match.find.byId(id);
+        statisticForm.get().update(match.statistics.id);
+
         Team team1 = Team.find.byId(matchForm.get().team1.id);
         Team team2 = Team.find.byId(matchForm.get().team2.id);
         flash("success", "Mecz " + team1.name + " - " + team2.name + " został zaktualizowany!");
-        return GO_HOME;
+        return redirect(routes.Matches.edit(id));
     }
 
 
