@@ -1,4 +1,4 @@
-@(matchForm: Form[Match], videos: List[Video])
+@(matchForm: Form[Match], videos: List[Video], lineup1: List[Lineup], lineup2: List[Lineup])
 
 <html>
 <head>
@@ -29,7 +29,7 @@
                         <td class="scoreTeam" id="scoreTeamHost">@matchForm("team1.name").value</td>
                         <td class="scoreGoals">
                             <span id="hostGoalsFull">@matchForm("score1").value</span>:<span id="guestGoalsFull">@matchForm("score2").value</span>
-                            <div id="halfGoals" class="halfGoals">(<span id="hostGoalsHalf">@matchForm("score1").value</span>:<span id="guestGoalsHalf">@matchForm("score2_half").value</span>)</div>
+                            <div id="halfGoals" class="halfGoals">(<span id="hostGoalsHalf">@matchForm("score1_half").value</span>:<span id="guestGoalsHalf">@matchForm("score2_half").value</span>)</div>
                         </td>
                         <td class="scoreTeam" id="scoreTeamGuest">@matchForm("team2.name").value</td>
                     </tr>
@@ -57,6 +57,22 @@
             <div class="playersPanel">
                 <div class="topPart"></div>
                 <div class="middlePart">
+
+                    <div width="100%;" style="display:table;margin:0 auto;padding:0;border:0;height:auto;">
+                        <div style="float:left;">
+                            <strong>@matchForm("team1.name").value</strong><br>
+                            @for(l1 <- lineup1) {
+                                @l1.player1.firstname @l1.player1.lastname<br>
+                            }
+                        </div>
+                        <div style="float:right;margin-left:20px;">
+                            <strong>@matchForm("team2.name").value</strong><br>
+                            @for(l2 <- lineup2) {
+                            @l2.player1.firstname @l2.player1.lastname<br>
+                            }
+                        </div>
+                    </div>
+
                     <table id="playersTable">
                         <tr>
                             <td colspan="2">

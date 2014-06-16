@@ -63,10 +63,25 @@ public class Match extends Model {
     public Match() {
         Integer i = 0;
         long l = i.longValue();
+        this.statistics = new Statistic();
+        this.queue = l;
         this.score1 = l;
         this.score2 = l;
         this.score1_half = l;
         this.score2_half = l;
+        this.status = l;
+    }
+
+    public Match(Statistic st) {
+        Integer i = 0;
+        long l = i.longValue();
+        this.statistics = st;
+        this.queue = l;
+        this.score1 = l;
+        this.score2 = l;
+        this.score1_half = l;
+        this.score2_half = l;
+        this.status = l;
     }
 
     public static Finder<Long, Match> find = new Finder<Long, Match>(Long.class, Match.class);

@@ -1,4 +1,4 @@
-@(matchForm: Form[Match])
+@(matchForm: Form[Match], statisticForm: Form[Statistic])
 
 @import helper._
 
@@ -6,10 +6,16 @@
 
 @main {
 
-<h1>Dodaj mecz</h1>
+@if(flash.containsKey("wrong")) {
+<div class="alert-message warning">
+    <strong>Gotowe!</strong> @flash.get("wrong")
+</div>
+}
 
 @form(routes.Matches.save()) {
-
+<div width="100%;" style="display:table;margin:0;padding:0;border:0;height:auto;">
+    <div style="float:left;">
+        <h1>Dodaj Mecz</h1>
 <fieldset>
 
     @select(
@@ -41,6 +47,83 @@
     @inputText(matchForm("viewers"), '_label -> "Widzowie")
 
 </fieldset>
+    </div>
+    <div style="float:right;margin-left:30px;">
+        <h1>Dodaj Statystyki</h1>
+        Bramki<br>
+        <input class="input_stat" id="goals1" name="goals1" value="@statisticForm("goals1").value">
+        <input class="input_stat" id="goals2" name="goals2" value="@statisticForm("goals2").value">
+        (
+        <input class="input_stat" id="goals1_half" name="goals1_half" value="@statisticForm("goals1_half").value">
+        <input class="input_stat" id="goals2_half" name="goals2_half" value="@statisticForm("goals2_half").value">
+        )<br>
+        Słupki/Poprzeczki:<br>
+        <input class="input_stat" id="goalpost1" name="goalpost1" value="@statisticForm("goalpost1").value">
+        <input class="input_stat" id="goalpost2" name="goalpost2" value="@statisticForm("goalpost2").value">
+        (
+        <input class="input_stat" id="goalpost1_half" name="goalpost1_half" value="@statisticForm("goalpost1_half").value">
+        <input class="input_stat" id="goalpost2_half" name="goalpost2_half" value="@statisticForm("goalpost2_half").value">
+        )<br>
+        Strzały celne:<br>
+        <input class="input_stat" id="attempts_target1" name="attempts_target1" value="@statisticForm("attempts_target1").value">
+        <input class="input_stat" id="attempts_target2" name="attempts_target2" value="@statisticForm("attempts_target2").value">
+        (
+        <input class="input_stat" id="attempts_target1_half" name="attempts_target1_half" value="@statisticForm("attempts_target1_half").value">
+        <input class="input_stat" id="attempts_target2_half" name="attempts_target2_half" value="@statisticForm("attempts_target2_half").value">
+        )<br>
+        Strzały niecelne:<br>
+        <input class="input_stat" id="attempts_offtarget1" name="attempts_offtarget1" value="@statisticForm("attempts_offtarget1").value">
+        <input class="input_stat" id="attempts_offtarget2" name="attempts_offtarget2" value="@statisticForm("attempts_offtarget2").value">
+        (
+        <input class="input_stat" id="attempts_offtarget1_half" name="attempts_offtarget1_half" value="@statisticForm("attempts_offtarget1_half").value">
+        <input class="input_stat" id="attempts_offtarget2_half" name="attempts_offtarget2_half" value="@statisticForm("attempts_offtarget2_half").value">
+        )<br>
+        Strzały zablokowane:<br>
+        <input class="input_stat" id="attempts_blocked1" name="attempts_blocked1" value="@statisticForm("attempts_blocked1").value">
+        <input class="input_stat" id="attempts_blocked2" name="attempts_blocked2" value="@statisticForm("attempts_blocked2").value">
+        (
+        <input class="input_stat" id="attempts_blocked1_half" name="attempts_blocked1_half" value="@statisticForm("attempts_blocked1_half").value">
+        <input class="input_stat" id="attempts_blocked2_half" name="attempts_blocked2_half" value="@statisticForm("attempts_blocked2_half").value">
+        )<br>
+        Rzuty rożne:<br>
+        <input class="input_stat" id="corners1" name="corners1" value="@statisticForm("corners1").value">
+        <input class="input_stat" id="corners2" name="corners2" value="@statisticForm("corners2").value">
+        (
+        <input class="input_stat" id="corners1_half" name="corners1_half" value="@statisticForm("corners1_half").value">
+        <input class="input_stat" id="corners2_half" name="corners2_half" value="@statisticForm("corners2_half").value">
+        )<br>
+        Faule:<br>
+        <input class="input_stat" id="fouls1" name="fouls1" value="@statisticForm("fouls1").value">
+        <input class="input_stat" id="fouls2" name="fouls2" value="@statisticForm("fouls2").value">
+        (
+        <input class="input_stat" id="fouls1_half" name="fouls1_half" value="@statisticForm("fouls1_half").value">
+        <input class="input_stat" id="fouls2_half" name="fouls2_half" value="@statisticForm("fouls2_half").value">
+        )<br>
+        Spalone:<br>
+        <input class="input_stat" id="offsides1" name="offsides1" value="@statisticForm("offsides1").value">
+        <input class="input_stat" id="offsides2" name="offsides2" value="@statisticForm("offsides2").value">
+        (
+        <input class="input_stat" id="offsides1_half" name="offsides1_half" value="@statisticForm("offsides1_half").value">
+        <input class="input_stat" id="offsides2_half" name="offsides2_half" value="@statisticForm("offsides2_half").value">
+        )<br>
+        Żółte kartki:<br>
+        <input class="input_stat" id="yellow_cards1" name="yellow_cards1" value="@statisticForm("yellow_cards1").value">
+        <input class="input_stat" id="yellow_cards2" name="yellow_cards2" value="@statisticForm("yellow_cards2").value">
+        (
+        <input class="input_stat" id="yellow_cards1_half" name="yellow_cards1_half" value="@statisticForm("yellow_cards1_half").value">
+        <input class="input_stat" id="yellow_cards2_half" name="yellow_cards2_half" value="@statisticForm("yellow_cards2_half").value">
+        )<br>
+        Czerwone kartki:<br>
+        <input class="input_stat" id="red_cards1" name="red_cards1" value="@statisticForm("red_cards1").value">
+        <input class="input_stat" id="red_cards2" name="red_cards2" value="@statisticForm("red_cards2").value">
+        (
+        <input class="input_stat" id="red_cards1_half" name="red_cards1_half" value="@statisticForm("red_cards1_half").value">
+        <input class="input_stat" id="red_cards2_half" name="red_cards2_half" value="@statisticForm("red_cards2_half").value">
+        )<br>
+
+    </div>
+</div>
+
 
 <div class="actions">
     <input type="submit" value="Dodaj mecz" class="btn primary"> or

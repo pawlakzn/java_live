@@ -75,12 +75,12 @@ routes.Seasons.list(newPage, sortBy, order, currentFilter)
 
     @for(season <- currentPage.getList) {
     <tr>
-        <td><a href="@routes.Seasons.edit(season.id)">@season.year_start.date.format("YYYY")</a></td>
+        <td><a href="@routes.Seasons.edit(season.id)">@season.year_start.date.format("yyyy")</a></td>
         <td>
             @if(season.year_end == null) {
             <em>-</em>
             } else {
-            @season.year_end.date.format("YYYY")
+            @season.year_end.date.format("yyyy")
             }
         </td>
     </tr>

@@ -87,7 +87,7 @@ public class Users extends Controller {
 
         userForm.get().save();
         flash("success", "Użytkownik " + userForm.get().login + " został dodany!");
-        return GO_HOME;
+        return redirect(routes.Matches.index());
     }
 
     public static Result delete(Long id) {

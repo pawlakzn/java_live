@@ -6,7 +6,11 @@
 
 @main {
 
-
+@if(flash.containsKey("wrong")) {
+<div class="alert-message warning">
+    <strong>Błąd!</strong> @flash.get("wrong")
+</div>
+}
 
 @if(flash.containsKey("success")) {
 <div class="alert-message warning">
@@ -58,7 +62,7 @@
     </div>
     <div style="float:right;margin-left:30px;">
         <h1>Edytuj Statystyki</h1>
-        <strong>@matchForm("team1.name").value</strong> - <strong>@matchForm("team2.name").value</strong><br><br>
+        <strong>@matchForm("team1.name").value</strong> - <strong>@matchForm("team2.name").value</strong> : @matchForm("statistics.id").value ^ @statisticForm("id").value<br><br>
         Bramki<br>
         <input class="input_stat" id="goals1" name="goals1" value="@statisticForm("goals1").value">
         <input class="input_stat" id="goals2" name="goals2" value="@statisticForm("goals2").value">
@@ -132,6 +136,10 @@
 
     </div>
 </div>
+
+<input class="input_stat" type="hidden" id="team1.name" name="team1.name" value="@matchForm("team1.name").value">
+<input class="input_stat" type="hidden" id="team2.name" name="team2.name" value="@matchForm("team2.name").value">
+<input class="input_stat" type="hidden" id="id" name="id" value="@statisticForm("id").value">
 
 <div class="actions">
     <input type="submit" value="Zapisz" class="btn primary"> lub

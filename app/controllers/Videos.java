@@ -40,6 +40,7 @@ public class Videos extends Controller {
         if(videoForm.hasErrors()) {
             return badRequest(views.html.videos.editForm.render(id, videoForm));
         }
+
         videoForm.get().update(id);
         flash("success", "Wideo " + videoForm.get().name + " zostało dodane");
         return GO_HOME;
@@ -58,6 +59,11 @@ public class Videos extends Controller {
         if(videoForm.hasErrors()) {
             return badRequest(views.html.videos.createForm.render(videoForm));
         }
+
+        if(videoForm.get().vmatch.id == null) {
+            return badRequest(views.html.videos.createForm.render(videoForm));
+        }
+
         videoForm.get().save();
         flash("success", "Wideo " + videoForm.get().name + " zostało dodane!");
         return GO_HOME;

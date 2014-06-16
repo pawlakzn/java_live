@@ -73,10 +73,10 @@ routes.Matches.list(newPage, sortBy, order, currentFilter)
 
     @for(matches <- currentPage.getList) {
     <tr>
-        <td>@matches.team1.name</td>
-        <td>@matches.team2.name</td>
+        <td>@if(matches.team1 != null){@matches.team1.name}</td>
+        <td>@if(matches.team1 != null){@matches.team2.name}</td>
         <td>
-            @if(matches.game.name == null) {
+            @if(matches.game == null) {
             <em>-</em>
             } else {
             @matches.game.name
@@ -93,7 +93,7 @@ routes.Matches.list(newPage, sortBy, order, currentFilter)
             @if(matches.score1 == null || matches.score2 == null) {
             <em>-</em>
             } else {
-            @matches.score1:@matches.score2 (@matches.score1:@matches.score2)
+            @matches.score1:@matches.score2 (@matches.score1_half:@matches.score2_half)
             }
         </td>
         <td>

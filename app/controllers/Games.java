@@ -64,6 +64,10 @@ public class Games extends Controller {
     }
 
     public static Result delete(Long id) {
+        for(Match c: Match.find.where().findList()) {
+            if (c.game.id == id)
+                c.delete();
+        }
         Game.find.ref(id).delete();
         flash("success", "Rozgrywki zostały usunięte");
         return GO_HOME;

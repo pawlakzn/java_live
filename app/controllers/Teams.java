@@ -71,6 +71,17 @@ public class Teams extends Controller {
 
 
     public static Result delete(Long id) {
+        for(Match a: Match.find.where().findList()) {
+            if (a.team1.id == id) {
+                flash("wrong", "Zespół nie może zostać usunięty z powodu istniejących meczów!");
+                return redirect(routes.Teams.edit(id));
+            }
+            if (a.team2.id == id) {
+                flash("wrong", "Zespół nie może zostać usunięty z powodu istniejących meczów!");
+                return redirect(routes.Teams.edit(id));
+            }
+        }
+
         Team.find.ref(id).delete();
         flash("success", "Zespół został usunięty");
         return GO_HOME;

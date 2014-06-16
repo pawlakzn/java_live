@@ -2,6 +2,16 @@
 
 # --- !Ups
 
+create table card (
+  id                        bigint not null,
+  match_id                  bigint,
+  team_id                   bigint,
+  player_id                 bigint,
+  type                      bigint,
+  minute                    bigint,
+  constraint pk_card primary key (id))
+;
+
 create table gallery (
 	id                        bigint not null,
 	match_id                  bigint,
@@ -14,6 +24,35 @@ create table game (
   season_id                 bigint,
   name                      varchar(255),
   constraint pk_game primary key (id))
+;
+
+create table goal (
+  id                        bigint not null,
+  match_id                  bigint,
+  team_id                   bigint,
+  player_id                 bigint,
+  minute                    bigint,
+  constraint pk_goal primary key (id))
+;
+
+create table lineup (
+  id                        bigint not null,
+  match_id                  bigint,
+  team_id                   bigint,
+  minute                    bigint,
+  player1_id                bigint,
+  player2_id                bigint,
+  position                  bigint,
+  constraint pk_lineup primary key (id))
+;
+
+create table live (
+  id                        bigint not null,
+  match_id                  bigint,
+  minute                    bigint,
+  text                      text,
+  status                    bigint,
+  constraint pk_live primary key (id))
 ;
 
 create table match (
@@ -136,8 +175,12 @@ create table video (
 	constraint pk_video primary key (id))
 ;
 
+create sequence card_seq start with 5;
 create sequence gallery_seq start with 2;
 create sequence game_seq start with 5;
+create sequence goal_seq start with 5;
+create sequence lineup_seq start with 5;
+create sequence live_seq start with 5;
 create sequence match_seq start with 5;
 create sequence player_seq start with 20;
 create sequence referee_seq  start with 12;
@@ -147,39 +190,56 @@ create sequence team_seq start with 17;
 create sequence user_seq start with 4;
 create sequence video_seq start with 5;
 
-alter table gallery add constraint fk_gallery_match_1 foreign key (match_id) references match (id) on delete restrict on update restrict;
-create index ix_gallery_match_1 on gallery (match_id);
-
-alter table game add constraint fk_game_season_2 foreign key (season_id) references season (id) on delete restrict on update restrict;
-create index ix_game_season_2 on game (season_id);
-
-alter table match add constraint fk_match_game_3 foreign key (game_id) references game (id) on delete restrict on update restrict;
-create index ix_match_game_3 on match (game_id);
-
-alter table match add constraint fk_match_statistics_4 foreign key (statistics_id) references statistic (id) on delete restrict on update restrict;
-create index ix_match_statistics_4 on match (statistics_id);
-
-alter table match add constraint fk_match_referee_5 foreign key (referee_id) references referee (id) on delete restrict on update restrict;
-create index ix_match_referee_5 on match (referee_id);
-
-alter table match add constraint fk_match_team1_6 foreign key (team1_id) references team (id) on delete restrict on update restrict;
-create index ix_match_team1_6 on match (team1_id);
-
-alter table match add constraint fk_match_team2_7 foreign key (team2_id) references team (id) on delete restrict on update restrict;
-create index ix_match_team2_7 on match (team2_id);
-
-alter table player add constraint fk_player_team_8 foreign key (team_id) references team (id) on delete restrict on update restrict;
-create index ix_player_team_8 on player (team_id);
-
-alter table video add constraint fk_video_vmatch_9 foreign key (vmatch_id) references vmatch (id) on delete restrict on update restrict;
-create index ix_video_vmatch_9 on video (vmatch_id);
+alter table card add constraint fk_card_match_1 foreign key (match_id) references match (id) on delete restrict on update restrict;
+create index ix_card_match_1 on card (match_id);
+alter table card add constraint fk_card_team_2 foreign key (team_id) references team (id) on delete restrict on update restrict;
+create index ix_card_team_2 on card (team_id);
+alter table card add constraint fk_card_player_3 foreign key (player_id) references player (id) on delete restrict on update restrict;
+create index ix_card_player_3 on card (player_id);
+alter table gallery add constraint fk_gallery_match_4 foreign key (match_id) references match (id) on delete restrict on update restrict;
+create index ix_gallery_match_4 on gallery (match_id);
+alter table game add constraint fk_game_season_5 foreign key (season_id) references season (id) on delete restrict on update restrict;
+create index ix_game_season_5 on game (season_id);
+alter table goal add constraint fk_goal_match_6 foreign key (match_id) references match (id) on delete restrict on update restrict;
+create index ix_goal_match_6 on goal (match_id);
+alter table goal add constraint fk_goal_team_7 foreign key (team_id) references team (id) on delete restrict on update restrict;
+create index ix_goal_team_7 on goal (team_id);
+alter table goal add constraint fk_goal_player_8 foreign key (player_id) references player (id) on delete restrict on update restrict;
+create index ix_goal_player_8 on goal (player_id);
+alter table lineup add constraint fk_lineup_match_9 foreign key (match_id) references match (id) on delete restrict on update restrict;
+create index ix_lineup_match_9 on lineup (match_id);
+alter table lineup add constraint fk_lineup_team_10 foreign key (team_id) references team (id) on delete restrict on update restrict;
+create index ix_lineup_team_10 on lineup (team_id);
+alter table lineup add constraint fk_lineup_player1_11 foreign key (player1_id) references player (id) on delete restrict on update restrict;
+create index ix_lineup_player1_11 on lineup (player1_id);
+alter table lineup add constraint fk_lineup_player2_12 foreign key (player2_id) references player (id) on delete restrict on update restrict;
+create index ix_lineup_player2_12 on lineup (player2_id);
+alter table live add constraint fk_live_match_13 foreign key (match_id) references match (id) on delete restrict on update restrict;
+create index ix_live_match_13 on live (match_id);
+alter table match add constraint fk_match_game_14 foreign key (game_id) references game (id) on delete restrict on update restrict;
+create index ix_match_game_14 on match (game_id);
+alter table match add constraint fk_match_statistics_15 foreign key (statistics_id) references statistic (id) on delete restrict on update restrict;
+create index ix_match_statistics_15 on match (statistics_id);
+alter table match add constraint fk_match_referee_16 foreign key (referee_id) references referee (id) on delete restrict on update restrict;
+create index ix_match_referee_16 on match (referee_id);
+alter table match add constraint fk_match_team1_17 foreign key (team1_id) references team (id) on delete restrict on update restrict;
+create index ix_match_team1_17 on match (team1_id);
+alter table match add constraint fk_match_team2_18 foreign key (team2_id) references team (id) on delete restrict on update restrict;
+create index ix_match_team2_18 on match (team2_id);
+alter table player add constraint fk_player_team_19 foreign key (team_id) references team (id) on delete restrict on update restrict;
+create index ix_player_team_19 on player (team_id);
+alter table video add constraint fk_video_vmatch_20 foreign key (vmatch_id) references match (id) on delete restrict on update restrict;
+create index ix_video_vmatch_20 on video (vmatch_id);
 
 # --- !Downs
 
 SET REFERENTIAL_INTEGRITY FALSE;
-
+drop table if exists card;
 drop table if exists gallery;
 drop table if exists game;
+drop table if exists goal;
+drop table if exists lineup;
+drop table if exists live;
 drop table if exists match;
 drop table if exists player;
 drop table if exists referee;
@@ -190,9 +250,12 @@ drop table if exists user;
 drop table if exists video;
 
 SET REFERENTIAL_INTEGRITY TRUE;
-
+drop sequence if exists card_seq;
 drop sequence if exists gallery_seq;
 drop sequence if exists game_seq;
+drop sequence if exists goal_seq;
+drop sequence if exists lineup_seq;
+drop sequence if exists live_seq;
 drop sequence if exists match_seq;
 drop sequence if exists player_seq;
 drop sequence if exists referee_seq;
@@ -201,4 +264,3 @@ drop sequence if exists statistic_seq;
 drop sequence if exists team_seq;
 drop sequence if exists user_seq;
 drop sequence if exists video_seq;
-

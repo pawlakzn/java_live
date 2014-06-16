@@ -34,30 +34,36 @@ Seq[Any](format.raw/*1.40*/("""
 
 """),_display_(Seq[Any](/*7.2*/main/*7.6*/ {_display_(Seq[Any](format.raw/*7.8*/("""
 
+"""),_display_(Seq[Any](/*9.2*/if(flash.containsKey("wrong"))/*9.32*/ {_display_(Seq[Any](format.raw/*9.34*/("""
+<div class="alert-message warning">
+    <strong>Błąd!</strong> """),_display_(Seq[Any](/*11.29*/flash/*11.34*/.get("wrong"))),format.raw/*11.47*/("""
+</div>
+""")))})),format.raw/*13.2*/("""
+
 <h1>Edytuj sędziego</h1>
 
-"""),_display_(Seq[Any](/*11.2*/form(routes.Referees.update(id))/*11.34*/ {_display_(Seq[Any](format.raw/*11.36*/("""
+"""),_display_(Seq[Any](/*17.2*/form(routes.Referees.update(id))/*17.34*/ {_display_(Seq[Any](format.raw/*17.36*/("""
 
 <fieldset>
 
-    """),_display_(Seq[Any](/*15.6*/inputText(refereeForm("firstname"), '_label -> "Imię"))),format.raw/*15.60*/("""
-    """),_display_(Seq[Any](/*16.6*/inputText(refereeForm("lastname"), '_label -> "Nazwisko"))),format.raw/*16.63*/("""
-    """),_display_(Seq[Any](/*17.6*/inputText(refereeForm("city"), '_label -> "Miasto"))),format.raw/*17.57*/("""
+    """),_display_(Seq[Any](/*21.6*/inputText(refereeForm("firstname"), '_label -> "Imię"))),format.raw/*21.60*/("""
+    """),_display_(Seq[Any](/*22.6*/inputText(refereeForm("lastname"), '_label -> "Nazwisko"))),format.raw/*22.63*/("""
+    """),_display_(Seq[Any](/*23.6*/inputText(refereeForm("city"), '_label -> "Miasto"))),format.raw/*23.57*/("""
 
 </fieldset>
 
 <div class="actions">
     <input type="submit" value="Edytuj sędziego" class="btn primary"> or
-    <a href=""""),_display_(Seq[Any](/*23.15*/routes/*23.21*/.Referees.list())),format.raw/*23.37*/("""" class="btn">Anuluj</a>
+    <a href=""""),_display_(Seq[Any](/*29.15*/routes/*29.21*/.Referees.list())),format.raw/*29.37*/("""" class="btn">Anuluj</a>
 </div>
 
-""")))})),format.raw/*26.2*/("""
-
-"""),_display_(Seq[Any](/*28.2*/form(routes.Referees.delete(id), 'class -> "topRight")/*28.56*/ {_display_(Seq[Any](format.raw/*28.58*/("""
-<input type="submit" value="Usuń sędziego" class="btn danger">
-""")))})),format.raw/*30.2*/("""
-
 """)))})),format.raw/*32.2*/("""
+
+"""),_display_(Seq[Any](/*34.2*/form(routes.Referees.delete(id), 'class -> "topRight")/*34.56*/ {_display_(Seq[Any](format.raw/*34.58*/("""
+<input type="submit" value="Usuń sędziego" class="btn danger">
+""")))})),format.raw/*36.2*/("""
+
+""")))})),format.raw/*38.2*/("""
 """))}
     }
     
@@ -70,11 +76,11 @@ Seq[Any](format.raw/*1.40*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 15 23:09:50 CEST 2014
+                    DATE: Mon Jun 16 17:32:31 CEST 2014
                     SOURCE: D:/Pawlak/Play/live/app/views/referees/editForm.scala.html
-                    HASH: 8a8e4fc7657a182ed0973548550b3925b1a476d2
-                    MATRIX: 798->1|939->64|971->88|1055->39|1085->61|1114->142|1153->147|1164->151|1202->153|1270->186|1311->218|1351->220|1409->243|1485->297|1527->304|1606->361|1648->368|1721->419|1887->549|1902->555|1940->571|2008->608|2048->613|2111->667|2151->669|2249->736|2285->741
-                    LINES: 26->1|29->5|29->5|30->1|32->4|33->5|35->7|35->7|35->7|39->11|39->11|39->11|43->15|43->15|44->16|44->16|45->17|45->17|51->23|51->23|51->23|54->26|56->28|56->28|56->28|58->30|60->32
+                    HASH: 393b35c2b4419f2f9544f37c9ac8bf8eb23c47cf
+                    MATRIX: 798->1|939->64|971->88|1055->39|1085->61|1114->142|1153->147|1164->151|1202->153|1241->158|1279->188|1318->190|1421->257|1435->262|1470->275|1512->286|1580->319|1621->351|1661->353|1719->376|1795->430|1837->437|1916->494|1958->501|2031->552|2197->682|2212->688|2250->704|2318->741|2358->746|2421->800|2461->802|2559->869|2595->874
+                    LINES: 26->1|29->5|29->5|30->1|32->4|33->5|35->7|35->7|35->7|37->9|37->9|37->9|39->11|39->11|39->11|41->13|45->17|45->17|45->17|49->21|49->21|50->22|50->22|51->23|51->23|57->29|57->29|57->29|60->32|62->34|62->34|62->34|64->36|66->38
                     -- GENERATED --
                 */
             

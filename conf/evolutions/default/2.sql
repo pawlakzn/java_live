@@ -40,7 +40,7 @@ insert into team (id,name, crest) values (16,'Piast Gliwice', 'crests/piast_gliw
 
 insert into player (id, team_id, lastname, firstname, date_birth, status, photo, height, weight, position, number) values (1, 1, 'Mila', 'Sebastian', '1982-07-10', 1, 'players/mila.jpg', 178, 67, 'pomocnik', 11);
 insert into player (id, team_id, lastname, firstname, date_birth, status, photo, height, weight, position, number) values (2, 1, 'Kelemen', 'Marian', '1979-12-07', 1, 'players/kelemen.jpg', 188, 83, 'bramkarz', 25);
-insert into player (id, team_id, lastname, firstname, date_birth, status, photo, height, weight, position, number) values (3, 1, 'Ostrowski', 'Krzysztof', '1982-05-03', 1, 'ostrowski.jpg', 178, 73, 'obrońca', 16);
+insert into player (id, team_id, lastname, firstname, date_birth, status, photo, height, weight, position, number) values (3, 1, 'Ostrowski', 'Krzysztof', '1982-05-03', 1, 'players/ostrowski.jpg', 178, 73, 'obrońca', 16);
 insert into player (id, team_id, lastname, firstname, date_birth, status, photo, height, weight, position, number) values (4, 1, 'Pawelec', 'Mariusz', '1986-04-14', 1, 'players/pawelec.jpg', 180, 72, 'obrońca', 17);
 insert into player (id, team_id, lastname, firstname, date_birth, status, photo, height, weight, position, number) values (5, 1, 'Paraiba', 'Dudu', '1985-03-11', 1, 'players/paraiba.jpg', 181, 71, 'obrońca', 12);
 insert into player (id, team_id, lastname, firstname, date_birth, status, photo, height, weight, position, number) values (6, 1, 'Patejuk', 'Sylwester', '1982-11-30', 1, 'players/patejuk.jpg', 188, 80, 'pomocnik', 9);
@@ -57,24 +57,43 @@ insert into user (id, login, email, password, name, lastname, status) values (2,
 insert into user (id, login, email, password, name, lastname, status) values (3, 'kuc', 'p.lorenc@wp.pl', 'test', 'Mateusz', 'Kuc', 0);
 
 insert into statistic(id, goals1, goals2, goals1_half, goals2_half, goalpost1, goalpost2, goalpost1_half, goalpost2_half, attempts_target1, attempts_target2, attempts_target1_half, attempts_target2_half, attempts_offtarget1, attempts_offtarget2, attempts_offtarget1_half, attempts_offtarget2_half, attempts_blocked1, attempts_blocked2, attempts_blocked1_half, attempts_blocked2_half, corners1, corners2, corners1_half, corners2_half, fouls1, fouls2, fouls1_half, fouls2_half, offsides1, offsides2, offsides1_half, offsides2_half, yellow_cards1, yellow_cards2, yellow_cards1_half, yellow_cards2_half, red_cards1, red_cards2, red_cards1_half, red_cards2_half) values (1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-insert into statistic(id, goals1, goals2, goals1_half, goals2_half, goalpost1, goalpost2, goalpost1_half, goalpost2_half, attempts_target1, attempts_target2, attempts_target1_half, attempts_target2_half, attempts_offtarget1, attempts_offtarget2, attempts_offtarget1_half, attempts_offtarget2_half, attempts_blocked1, attempts_blocked2, attempts_blocked1_half, attempts_blocked2_half, corners1, corners2, corners1_half, corners2_half, fouls1, fouls2, fouls1_half, fouls2_half, offsides1, offsides2, offsides1_half, offsides2_half, yellow_cards1, yellow_cards2, yellow_cards1_half, yellow_cards2_half, red_cards1, red_cards2, red_cards1_half, red_cards2_half) values (2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+insert into statistic(id, goals1, goals2, goals1_half, goals2_half, goalpost1, goalpost2, goalpost1_half, goalpost2_half, attempts_target1, attempts_target2, attempts_target1_half, attempts_target2_half, attempts_offtarget1, attempts_offtarget2, attempts_offtarget1_half, attempts_offtarget2_half, attempts_blocked1, attempts_blocked2, attempts_blocked1_half, attempts_blocked2_half, corners1, corners2, corners1_half, corners2_half, fouls1, fouls2, fouls1_half, fouls2_half, offsides1, offsides2, offsides1_half, offsides2_half, yellow_cards1, yellow_cards2, yellow_cards1_half, yellow_cards2_half, red_cards1, red_cards2, red_cards1_half, red_cards2_half) values (2, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 insert into statistic(id, goals1, goals2, goals1_half, goals2_half, goalpost1, goalpost2, goalpost1_half, goalpost2_half, attempts_target1, attempts_target2, attempts_target1_half, attempts_target2_half, attempts_offtarget1, attempts_offtarget2, attempts_offtarget1_half, attempts_offtarget2_half, attempts_blocked1, attempts_blocked2, attempts_blocked1_half, attempts_blocked2_half, corners1, corners2, corners1_half, corners2_half, fouls1, fouls2, fouls1_half, fouls2_half, offsides1, offsides2, offsides1_half, offsides2_half, yellow_cards1, yellow_cards2, yellow_cards1_half, yellow_cards2_half, red_cards1, red_cards2, red_cards1_half, red_cards2_half) values (3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-insert into statistic(id, goals1, goals2, goals1_half, goals2_half, goalpost1, goalpost2, goalpost1_half, goalpost2_half, attempts_target1, attempts_target2, attempts_target1_half, attempts_target2_half, attempts_offtarget1, attempts_offtarget2, attempts_offtarget1_half, attempts_offtarget2_half, attempts_blocked1, attempts_blocked2, attempts_blocked1_half, attempts_blocked2_half, corners1, corners2, corners1_half, corners2_half, fouls1, fouls2, fouls1_half, fouls2_half, offsides1, offsides2, offsides1_half, offsides2_half, yellow_cards1, yellow_cards2, yellow_cards1_half, yellow_cards2_half, red_cards1, red_cards2, red_cards1_half, red_cards2_half) values (4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+insert into statistic(id, goals1, goals2, goals1_half, goals2_half, goalpost1, goalpost2, goalpost1_half, goalpost2_half, attempts_target1, attempts_target2, attempts_target1_half, attempts_target2_half, attempts_offtarget1, attempts_offtarget2, attempts_offtarget1_half, attempts_offtarget2_half, attempts_blocked1, attempts_blocked2, attempts_blocked1_half, attempts_blocked2_half, corners1, corners2, corners1_half, corners2_half, fouls1, fouls2, fouls1_half, fouls2_half, offsides1, offsides2, offsides1_half, offsides2_half, yellow_cards1, yellow_cards2, yellow_cards1_half, yellow_cards2_half, red_cards1, red_cards2, red_cards1_half, red_cards2_half) values (4, 4, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
-insert into match(id, game_id, queue, statistics_id, referee_id, team1_id, team2_id, score1, score2, score1_half, score2_half, status, match_date, weather, viewers) values (1, 1, 1, 1, 1, 1, 2, 0, 0, 0, 0, 0, '2014-05-14 12:00:00', 'słonecznie', 43200);
+insert into match(id, game_id, queue, statistics_id, referee_id, team1_id, team2_id, score1, score2, score1_half, score2_half, status, match_date, weather, viewers) values (1, 1, 1, 1, 1, 1, 2, 1, 0, 0, 0, 0, '2014-05-14 12:00:00', 'słonecznie', 43200);
 insert into match(id, game_id, queue, statistics_id, referee_id, team1_id, team2_id, score1, score2, score1_half, score2_half, status, match_date, weather, viewers) values (2, 2, 6, 2, 2, 3, 4, 3, 0, 2, 0, 1, '2014-06-18 19:00:00', 'deszczowo', 24500);
-insert into match(id, game_id, queue, statistics_id, referee_id, team1_id, team2_id, score1, score2, score1_half, score2_half, status, match_date, weather, viewers) values (3, 3, 4, 3, 1, 4, 5, 0, 0, 0, 0, 2, '2014-05-14 12:00:00', 'upalnie', 43200);
-insert into match(id, game_id, queue, statistics_id, referee_id, team1_id, team2_id, score1, score2, score1_half, score2_half, status, match_date, weather, viewers) values (4, 1, 2, 4, 2, 3, 3, 2, 2, 1, 0, 3, '2014-06-18 19:00:00', 'pada grad', 14600);
+insert into match(id, game_id, queue, statistics_id, referee_id, team1_id, team2_id, score1, score2, score1_half, score2_half, status, match_date, weather, viewers) values (3, 3, 4, 3, 1, 4, 5, 3, 0, 0, 0, 2, '2014-05-14 12:00:00', 'upalnie', 43200);
+insert into match(id, game_id, queue, statistics_id, referee_id, team1_id, team2_id, score1, score2, score1_half, score2_half, status, match_date, weather, viewers) values (4, 1, 2, 4, 2, 3, 3, 4, 1, 0, 1, 3, '2014-06-18 19:00:00', 'pada grad', 14600);
 
 insert into gallery(id, match_id, path) values (1, 1, 'galleries/1/');
 
-insert into video(id, vmatch_id, name, path) values (1, 2, 'Oprawa', '//www.youtube.com/embed/_UUQVXGr85c');
-insert into video(id, vmatch_id, name, path) values (2, 2, 'Oprawa', '//www.youtube.com/embed/hGzTytCwJ1k');
-insert into video(id, vmatch_id, name, path) values (3, 1, 'Oprawa', '//www.youtube.com/embed/s_3dRddW8_Q');
+insert into video(id, vmatch_id, name, path) values (1, 2, 'Anielska oprawa', '//www.youtube.com/embed/_UUQVXGr85c');
+insert into video(id, vmatch_id, name, path) values (2, 2, 'Patriotyczna oprawa', '//www.youtube.com/embed/hGzTytCwJ1k');
+insert into video(id, vmatch_id, name, path) values (3, 1, 'Racowisko', '//www.youtube.com/embed/s_3dRddW8_Q');
+
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (1, 2, 4, 45, 1, 10, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (2, 2, 3, 0, 2, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (3, 2, 3, 0, 3, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (4, 2, 3, 0, 4, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (5, 2, 3, 0, 5, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (6, 2, 3, 0, 6, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (7, 2, 3, 0, 7, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (8, 2, 3, 0, 8, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (9, 2, 3, 0, 9, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (10, 2, 3, 0, 10, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (11, 2, 3, 0, 11, null, 0);
+insert into lineup(id, match_id, team_id, minute, player1_id, player2_id, position) values (12, 2, 3, 0, 12, null, 0);
+
+insert into live(id, match_id, minute, text, status) values (1, 2, 1, 'Zaczynamy!', 0);
 
 # --- !Downs
+delete from card;
 delete from gallery;
 delete from game;
+delete from goal;
+delete from lineup;
+delete from live;
 delete from match;
 delete from referee;
 delete from team;

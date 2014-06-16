@@ -6,6 +6,12 @@
 
 @main {
 
+@if(flash.containsKey("wrong")) {
+<div class="alert-message warning">
+    <strong>Błąd!</strong> @flash.get("wrong")
+</div>
+}
+
 <h1>Edytuj sędziego</h1>
 
 @form(routes.Referees.update(id)) {

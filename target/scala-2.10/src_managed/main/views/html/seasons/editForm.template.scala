@@ -36,27 +36,33 @@ Seq[Any](format.raw/*1.38*/("""
 
 <h1>Edytuj Sezon</h1>
 
-"""),_display_(Seq[Any](/*11.2*/form(routes.Seasons.update(id))/*11.33*/ {_display_(Seq[Any](format.raw/*11.35*/("""
+"""),_display_(Seq[Any](/*11.2*/if(flash.containsKey("wrong"))/*11.32*/ {_display_(Seq[Any](format.raw/*11.34*/("""
+<div class="alert-message warning">
+    """),_display_(Seq[Any](/*13.6*/flash/*13.11*/.get("wrong"))),format.raw/*13.24*/("""
+</div>
+""")))})),format.raw/*15.2*/("""
+
+"""),_display_(Seq[Any](/*17.2*/form(routes.Seasons.update(id))/*17.33*/ {_display_(Seq[Any](format.raw/*17.35*/("""
 
 <fieldset>
 
-    """),_display_(Seq[Any](/*15.6*/inputText(seasonForm("year_start"), '_label -> "Rok rozpoczęcia"))),format.raw/*15.71*/("""
-    """),_display_(Seq[Any](/*16.6*/inputText(seasonForm("year_end"), '_label -> "Rok zakończenia"))),format.raw/*16.69*/("""
+    """),_display_(Seq[Any](/*21.6*/inputText(seasonForm("year_start"), '_label -> "Rok rozpoczęcia"))),format.raw/*21.71*/("""
+    """),_display_(Seq[Any](/*22.6*/inputText(seasonForm("year_end"), '_label -> "Rok zakończenia"))),format.raw/*22.69*/("""
 
 </fieldset>
 
 <div class="actions">
     <input type="submit" value="Edytuj sezon" class="btn primary"> or
-    <a href=""""),_display_(Seq[Any](/*22.15*/routes/*22.21*/.Seasons.list())),format.raw/*22.36*/("""" class="btn">Anuluj</a>
+    <a href=""""),_display_(Seq[Any](/*28.15*/routes/*28.21*/.Seasons.list())),format.raw/*28.36*/("""" class="btn">Anuluj</a>
 </div>
 
-""")))})),format.raw/*25.2*/("""
-
-"""),_display_(Seq[Any](/*27.2*/form(routes.Seasons.delete(id), 'class -> "topRight")/*27.55*/ {_display_(Seq[Any](format.raw/*27.57*/("""
-<input type="submit" value="Usuń ten sezon" class="btn danger">
-""")))})),format.raw/*29.2*/("""
-
 """)))})),format.raw/*31.2*/("""
+
+"""),_display_(Seq[Any](/*33.2*/form(routes.Seasons.delete(id), 'class -> "topRight")/*33.55*/ {_display_(Seq[Any](format.raw/*33.57*/("""
+<input type="submit" value="Usuń ten sezon" class="btn danger">
+""")))})),format.raw/*35.2*/("""
+
+""")))})),format.raw/*37.2*/("""
 """))}
     }
     
@@ -69,11 +75,11 @@ Seq[Any](format.raw/*1.38*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 15 23:09:50 CEST 2014
+                    DATE: Mon Jun 16 17:20:58 CEST 2014
                     SOURCE: D:/Pawlak/Play/live/app/views/seasons/editForm.scala.html
-                    HASH: 0cdb1af531bea550aafdb9ea8d61c2db0623525d
-                    MATRIX: 796->1|935->62|967->86|1051->37|1081->59|1110->140|1149->145|1160->149|1198->151|1263->181|1303->212|1343->214|1401->237|1488->302|1530->309|1615->372|1778->499|1793->505|1830->520|1898->557|1938->562|2000->615|2040->617|2139->685|2175->690
-                    LINES: 26->1|29->5|29->5|30->1|32->4|33->5|35->7|35->7|35->7|39->11|39->11|39->11|43->15|43->15|44->16|44->16|50->22|50->22|50->22|53->25|55->27|55->27|55->27|57->29|59->31
+                    HASH: 080ac51d45fabf3697674ed1b128afa16c4df430
+                    MATRIX: 796->1|935->62|967->86|1051->37|1081->59|1110->140|1149->145|1160->149|1198->151|1263->181|1302->211|1342->213|1421->257|1435->262|1470->275|1512->286|1552->291|1592->322|1632->324|1690->347|1777->412|1819->419|1904->482|2067->609|2082->615|2119->630|2187->667|2227->672|2289->725|2329->727|2428->795|2464->800
+                    LINES: 26->1|29->5|29->5|30->1|32->4|33->5|35->7|35->7|35->7|39->11|39->11|39->11|41->13|41->13|41->13|43->15|45->17|45->17|45->17|49->21|49->21|50->22|50->22|56->28|56->28|56->28|59->31|61->33|61->33|61->33|63->35|65->37
                     -- GENERATED --
                 */
             

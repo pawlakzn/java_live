@@ -69,6 +69,13 @@ public class Referees extends Controller {
     }
 
     public static Result delete(Long id) {
+        for(Match a: Match.find.where().findList()) {
+            if (a.referee.id == id) {
+                flash("wrong", "Sędzia nie może zostać usunięty z powodu istniejących meczów!");
+                return redirect(routes.Referees.edit(id));
+            }
+        }
+
         Referee.find.ref(id).delete();
         flash("success", "Sędzia został usunięty");
         return GO_HOME;

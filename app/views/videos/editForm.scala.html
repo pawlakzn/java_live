@@ -32,8 +32,9 @@
 
 }
 
+@if(!videoForm("path").value.isEmpty){
 <iframe class="videoItem" title="YouTube video player" width="640" height="360" src=@videoForm("path").value frameborder="0" allowfullscreen style="max-width:100%;"></iframe>
-
+}
 
 @form(routes.Videos.delete(id), 'class -> "topRight") {
 <input type="submit" value="Usuń wideo" class="btn danger">

@@ -55,8 +55,8 @@ public class Season extends Model {
     public static Map<String,String> options() {
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
         for(Season c: Season.find.orderBy("year_start").findList()) {
-            String ys = new SimpleDateFormat("YYYY").format(c.year_start);
-            String ye = new SimpleDateFormat("YYYY").format(c.year_end);
+            String ys = new SimpleDateFormat("yyyy").format(c.year_start);
+            String ye = new SimpleDateFormat("yyyy").format(c.year_end);
             String y = ys+"/"+ye;
             options.put(c.id.toString(), y);
         }

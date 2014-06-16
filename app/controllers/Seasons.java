@@ -66,16 +66,28 @@ public class Seasons extends Controller {
             return badRequest(views.html.seasons.createForm.render(seasonForm));
         }
         seasonForm.get().save();
-        flash("success", "Sezon " + seasonForm.get().year_start + "/" + seasonForm.get().year_end + " został dodany!");
+
+        String ys = new SimpleDateFormat("yyyy").format(seasonForm.get().year_start);
+        String ye = new SimpleDateFormat("yyyy").format(seasonForm.get().year_end);
+        String y = ys+"/"+ye;
+
+        flash("success", "Sezon " + y + " został dodany!");
         return GO_HOME;
     }
 
     public static Result delete(Long id) {
         for(Game c: Game.find.where().findList()) {
-            if (c.season.id == id)
+            if (c.season.id == id) {
+                for(Match a: Match.find.where().findList()) {
+                    if (a.game.id == c.id) {
+                        flash("wrong", "Sezon nie może zostać usunięty z powodu istniejących meczów!");
+                        return redirect(routes.Seasons.edit(id));
+                    }
+                }
                 c.delete();
+            }
         }
-       // Game.find.where(Season.find.ref(id)).delete();
+
         Season.find.ref(id).delete();
         flash("success", "Sezon został usunięty");
         return GO_HOME;

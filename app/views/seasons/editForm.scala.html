@@ -8,6 +8,12 @@
 
 <h1>Edytuj Sezon</h1>
 
+@if(flash.containsKey("wrong")) {
+<div class="alert-message warning">
+    @flash.get("wrong")
+</div>
+}
+
 @form(routes.Seasons.update(id)) {
 
 <fieldset>

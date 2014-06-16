@@ -75,6 +75,12 @@ public class Players extends Controller {
     }
 
     public static Result delete(Long id) {
+        for(Lineup c: Lineup.find.where().findList()) {
+            if (c.player1.id == id) {
+                c.delete();
+            }
+        }
+
         Player.find.ref(id).delete();
         flash("success", "Piłkarz został usunięty");
         return GO_HOME;

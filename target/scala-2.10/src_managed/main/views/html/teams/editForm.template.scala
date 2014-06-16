@@ -36,45 +36,52 @@ Seq[Any](format.raw/*1.51*/("""
 
 <h1>Edytuj Zespół</h1>
 
-"""),_display_(Seq[Any](/*11.2*/if(flash.containsKey("success"))/*11.34*/ {_display_(Seq[Any](format.raw/*11.36*/("""
-    <div class="alert-message warning">
-        <strong>Gotowe!</strong> """),_display_(Seq[Any](/*13.35*/flash/*13.40*/.get("success"))),format.raw/*13.55*/("""
-    </div>
+"""),_display_(Seq[Any](/*11.2*/if(flash.containsKey("wrong"))/*11.32*/ {_display_(Seq[Any](format.raw/*11.34*/("""
+<div class="alert-message warning">
+    <strong>Gotowe!</strong> """),_display_(Seq[Any](/*13.31*/flash/*13.36*/.get("wrong"))),format.raw/*13.49*/("""
+</div>
 """)))})),format.raw/*15.2*/("""
 
-"""),_display_(Seq[Any](/*17.2*/form(routes.Teams.update(id))/*17.31*/ {_display_(Seq[Any](format.raw/*17.33*/("""
+
+"""),_display_(Seq[Any](/*18.2*/if(flash.containsKey("success"))/*18.34*/ {_display_(Seq[Any](format.raw/*18.36*/("""
+    <div class="alert-message warning">
+        <strong>Gotowe!</strong> """),_display_(Seq[Any](/*20.35*/flash/*20.40*/.get("success"))),format.raw/*20.55*/("""
+    </div>
+""")))})),format.raw/*22.2*/("""
+
+"""),_display_(Seq[Any](/*24.2*/form(routes.Teams.update(id))/*24.31*/ {_display_(Seq[Any](format.raw/*24.33*/("""
 
 <fieldset>
 
-    """),_display_(Seq[Any](/*21.6*/inputText(zespolForm("name"), '_label -> "Nazwa zespołu"))),format.raw/*21.63*/("""
-    """),_display_(Seq[Any](/*22.6*/select(
+    """),_display_(Seq[Any](/*28.6*/inputText(zespolForm("name"), '_label -> "Nazwa zespołu"))),format.raw/*28.63*/("""
+    """),_display_(Seq[Any](/*29.6*/select(
     zespolForm("crest"),
     options(Team.crest_options),
     '_label -> "Herb", '_default -> "-- Wybierz herb --",
     '_showConstraints -> false
-    ))),format.raw/*27.6*/("""
+    ))),format.raw/*34.6*/("""
 
 </fieldset>
 
-<img src=""""),_display_(Seq[Any](/*31.12*/routes/*31.18*/.Assets.at(crest))),format.raw/*31.35*/("""" style="margin:5px;">
+<img src=""""),_display_(Seq[Any](/*38.12*/routes/*38.18*/.Assets.at(crest))),format.raw/*38.35*/("""" style="margin:5px;">
 
 <div class="actions">
     <input type="submit" value="Edytuj zespół" class="btn primary"> or
-    <a href=""""),_display_(Seq[Any](/*35.15*/routes/*35.21*/.Teams.list())),format.raw/*35.34*/("""" class="btn">Anuluj</a>
+    <a href=""""),_display_(Seq[Any](/*42.15*/routes/*42.21*/.Teams.list())),format.raw/*42.34*/("""" class="btn">Anuluj</a>
 </div>
 
-""")))})),format.raw/*38.2*/("""
+""")))})),format.raw/*45.2*/("""
 
-"""),_display_(Seq[Any](/*40.2*/form(routes.Teams.delete(id), 'class -> "topRight")/*40.53*/ {_display_(Seq[Any](format.raw/*40.55*/("""
+"""),_display_(Seq[Any](/*47.2*/form(routes.Teams.delete(id), 'class -> "topRight")/*47.53*/ {_display_(Seq[Any](format.raw/*47.55*/("""
     <input type="submit" value="Usuń ten zespół" class="btn danger">
-""")))})),format.raw/*42.2*/("""
+""")))})),format.raw/*49.2*/("""
 
-"""),_display_(Seq[Any](/*44.2*/form(action = routes.Teams.upload(id), 'enctype -> "multipart/form-data")/*44.75*/ {_display_(Seq[Any](format.raw/*44.77*/("""
+"""),_display_(Seq[Any](/*51.2*/form(action = routes.Teams.upload(id), 'enctype -> "multipart/form-data")/*51.75*/ {_display_(Seq[Any](format.raw/*51.77*/("""
     <input type="file" name="picture">
     <input type="submit">
-""")))})),format.raw/*47.2*/("""
+""")))})),format.raw/*54.2*/("""
 
-""")))})),format.raw/*49.2*/("""
+""")))})),format.raw/*56.2*/("""
 
 """))}
     }
@@ -88,11 +95,11 @@ Seq[Any](format.raw/*1.51*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Sun Jun 15 23:09:50 CEST 2014
+                    DATE: Mon Jun 16 17:58:46 CEST 2014
                     SOURCE: D:/Pawlak/Play/live/app/views/teams/editForm.scala.html
-                    HASH: bbcc23f3c7940a73d1181bb5472cd738a3fd75ed
-                    MATRIX: 799->1|951->75|983->99|1067->50|1097->72|1126->153|1165->158|1176->162|1214->164|1280->195|1321->227|1361->229|1474->306|1488->311|1525->326|1571->341|1611->346|1649->375|1689->377|1747->400|1826->457|1868->464|2054->629|2120->659|2135->665|2174->682|2345->817|2360->823|2395->836|2463->873|2503->878|2563->929|2603->931|2707->1004|2747->1009|2829->1082|2869->1084|2970->1154|3006->1159
-                    LINES: 26->1|29->5|29->5|30->1|32->4|33->5|35->7|35->7|35->7|39->11|39->11|39->11|41->13|41->13|41->13|43->15|45->17|45->17|45->17|49->21|49->21|50->22|55->27|59->31|59->31|59->31|63->35|63->35|63->35|66->38|68->40|68->40|68->40|70->42|72->44|72->44|72->44|75->47|77->49
+                    HASH: d343e6a80c8926ce7415d7ff7de4dc6b416e543e
+                    MATRIX: 799->1|951->75|983->99|1067->50|1097->72|1126->153|1165->158|1176->162|1214->164|1280->195|1319->225|1359->227|1464->296|1478->301|1513->314|1555->325|1597->332|1638->364|1678->366|1791->443|1805->448|1842->463|1888->478|1928->483|1966->512|2006->514|2064->537|2143->594|2185->601|2371->766|2437->796|2452->802|2491->819|2662->954|2677->960|2712->973|2780->1010|2820->1015|2880->1066|2920->1068|3024->1141|3064->1146|3146->1219|3186->1221|3287->1291|3323->1296
+                    LINES: 26->1|29->5|29->5|30->1|32->4|33->5|35->7|35->7|35->7|39->11|39->11|39->11|41->13|41->13|41->13|43->15|46->18|46->18|46->18|48->20|48->20|48->20|50->22|52->24|52->24|52->24|56->28|56->28|57->29|62->34|66->38|66->38|66->38|70->42|70->42|70->42|73->45|75->47|75->47|75->47|77->49|79->51|79->51|79->51|82->54|84->56
                     -- GENERATED --
                 */
             

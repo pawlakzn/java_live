@@ -8,6 +8,13 @@
 
 <h1>Edytuj Zespół</h1>
 
+@if(flash.containsKey("wrong")) {
+<div class="alert-message warning">
+    <strong>Gotowe!</strong> @flash.get("wrong")
+</div>
+}
+
+
 @if(flash.containsKey("success")) {
     <div class="alert-message warning">
         <strong>Gotowe!</strong> @flash.get("success")
